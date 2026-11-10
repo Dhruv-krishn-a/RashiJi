@@ -297,7 +297,7 @@ footer{text-align:center;padding:28px 18px calc(25px + env(safe-area-inset-botto
  </div>
 </div>
 <div class="nebula"></div><canvas id="starfield"></canvas>
-<button id="musicToggle" class="music-pill" onclick="toggleMusic()" aria-label="Play our cosmic melody"><span class="music-note-icon">♪</span><span class="music-text">Our song ♡</span></button>
+
 <main>
 <section class="hero" id="home">
  <div class="hero-content">
@@ -610,11 +610,7 @@ async function toggleMirror(){const photo=document.getElementById('herPhoto'),vi
 window.toggleMirror=toggleMirror;
 let candlesOut=0;window.blowCandle=el=>{if(el.classList.contains('out'))return;el.classList.add('out');candlesOut++;const wisp=document.createElement('span');wisp.className='smoke-wisp';wisp.textContent='💨';el.appendChild(wisp);setTimeout(()=>wisp.remove(),1400);document.getElementById('cakeHint').textContent=(3-candlesOut)+' CANDLE'+(3-candlesOut===1?'':'S')+' LEFT';if(candlesOut===3){document.getElementById('cakeHint').textContent='ALL WISHES MADE ✨';document.getElementById('cakeMessage').textContent='I hope this year is a really good one for you. You deserve that. Happy birthday, Rashi. ❤️';confetti(95)}};
 window.celebrate=()=>{confetti(75);document.getElementById('cakeMessage').textContent='Okay, birthday girl. Your wishes are officially sent. I hope at least one of them comes true very soon. ❤️'};
-let audioCtx=null,isMusicPlaying=false,musicTimer=null;
-const melodyNotes=[261.63,329.63,392.00,493.88,523.25,493.88,392.00,329.63,349.23,440.00,523.25,659.25,523.25,440.00,349.23,329.63];
-let noteIdx=0;
-function playMusicNote(freq){if(!audioCtx)return;try{const osc=audioCtx.createOscillator(),gain=audioCtx.createGain();osc.type='sine';osc.frequency.setValueAtTime(freq,audioCtx.currentTime);const osc2=audioCtx.createOscillator(),gain2=audioCtx.createGain();osc2.type='triangle';osc2.frequency.setValueAtTime(freq*2,audioCtx.currentTime);gain.gain.setValueAtTime(0.04,audioCtx.currentTime);gain.gain.exponentialRampToValueAtTime(0.0001,audioCtx.currentTime+1.1);gain2.gain.setValueAtTime(0.015,audioCtx.currentTime);gain2.gain.exponentialRampToValueAtTime(0.0001,audioCtx.currentTime+0.75);osc.connect(gain);osc2.connect(gain2);gain.connect(audioCtx.destination);gain2.connect(audioCtx.destination);osc.start();osc2.start();osc.stop(audioCtx.currentTime+1.2);osc2.stop(audioCtx.currentTime+0.8)}catch(e){}}
-function toggleMusic(){const btn=document.getElementById('musicToggle');if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();isMusicPlaying=!isMusicPlaying;if(isMusicPlaying){btn.classList.add('playing');btn.querySelector('.music-text').textContent='Playing for you ♡';noteIdx=0;musicTimer=setInterval(()=>{playMusicNote(melodyNotes[noteIdx%melodyNotes.length]);noteIdx++},420)}else{btn.classList.remove('playing');btn.querySelector('.music-text').textContent='Our song ♡';clearInterval(musicTimer)}}
+window.toggleMusic=function(){};
 let heartCounter=0;function sendHeart(e){heartCounter++;const countEl=document.getElementById('heartCount');if(countEl)countEl.textContent='· '+heartCounter+' loves sent ❤️';const h=document.createElement('span');h.className='burst-heart';h.textContent='❤️';const wrap=document.querySelector('.memory-media-wrap');const rect=wrap?wrap.getBoundingClientRect():{left:0,top:0};const x=e.clientX?(e.clientX-rect.left):(wrap?wrap.clientWidth/2:100);const y=e.clientY?(e.clientY-rect.top):(wrap?wrap.clientHeight/2:80);h.style.left=x+'px';h.style.top=y+'px';if(wrap)wrap.appendChild(h);setTimeout(()=>h.remove(),900)}window.sendHeart=sendHeart;
 window.toggleMusic=toggleMusic;
 (()=>{let lastTime=0;const symbols=['✦','✧','♡','·','⋆'];const colors=['#f5bddb','#ffe4b5','#c49ceb','#ffffff'];function spawnDust(x,y){const el=document.createElement('span');el.className='stardust-particle';el.textContent=symbols[Math.floor(Math.random()*symbols.length)];el.style.left=x+'px';el.style.top=y+'px';el.style.color=colors[Math.floor(Math.random()*colors.length)];const driftX=(Math.random()-0.5)*36;const driftY=-12-Math.random()*22;el.style.setProperty('--dx',driftX+'px');el.style.setProperty('--dy',driftY+'px');document.body.appendChild(el);setTimeout(()=>el.remove(),750)}function handleMove(e){const now=performance.now();if(now-lastTime<45)return;lastTime=now;const x=e.clientX||(e.touches&&e.touches[0]?e.touches[0].clientX:0);const y=e.clientY||(e.touches&&e.touches[0]?e.touches[0].clientY:0);if(x&&y)spawnDust(x,y)}window.addEventListener('pointermove',handleMove,{passive:true})})();
@@ -688,7 +684,6 @@ function enterUniverse(e){
   preloader.classList.add('exiting');
   setTimeout(()=>{preloader.style.display='none';setTimeout(()=>{const toast=document.getElementById('toast');if(toast){toast.textContent="There's one last thing waiting at the end. ❤️";showToast()}},1200)},850);
  }
- if(!isMusicPlaying){toggleMusic()}
  confetti(65);
 }
 function skipOrEnterUniverse(){
