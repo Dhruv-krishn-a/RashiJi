@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090817">
+<title>For Rashi — My 11:11 · A Universe of Us</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=Sacramento&display=swap');
+:root{--bg:#090817;--ink:#fff4f3;--muted:#cfc1d5;--pink:#f2b6d0;--rose:#d88caf;--lav:#c9c0ff;--gold:#f2d6ae;--glass:#ffffff0b}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:18px}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+button{font:inherit}button:focus-visible,label:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
+#starfield{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.nebula{position:fixed;inset:-25%;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 18% 24%,#774b9b30,transparent 38%),radial-gradient(ellipse at 80% 64%,#bd5d9130,transparent 39%),radial-gradient(ellipse at 48% 90%,#4c4d9b20,transparent 35%);filter:blur(28px);animation:nebula 22s ease-in-out infinite alternate}
+@keyframes nebula{to{transform:translate(3%,-2%) scale(1.1);filter:blur(40px)}}
+main,footer{position:relative;z-index:1}.section{padding:92px 20px;text-align:center;max-width:1000px;margin:auto}.hero{min-height:100svh;min-height:100dvh;display:grid;place-items:center;padding:80px 22px 72px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:min(88vw,650px);aspect-ratio:1;border:1px solid #eac4e51c;border-radius:50%;box-shadow:0 0 100px #c17bca12,inset 0 0 100px #c17bca0b;animation:orbit 50s linear infinite}
+.hero:after{content:"";position:absolute;width:min(70vw,510px);aspect-ratio:1;border:1px solid #eac4e516;border-radius:50%;transform:rotate(45deg) scaleY(.55)}
+@keyframes orbit{to{transform:rotate(360deg)}}
+.hero-content{position:relative;z-index:2;max-width:680px}.script{font:clamp(39px,8vw,67px) 'Sacramento',cursive;color:var(--pink);line-height:1.1}.eyebrow{font-size:9px;letter-spacing:.29em;text-transform:uppercase;color:#dcb9d7;line-height:1.8}
+h1,h2{font:400 clamp(52px,10vw,100px)/.92 'Cormorant Garamond',serif;letter-spacing:-.035em;margin:21px 0}h1 em,h2 em{color:var(--pink);font-weight:400}
+p{color:var(--muted);font-size:14px;line-height:1.9}.lead{max-width:490px;margin:22px auto 29px;font-weight:300}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:14px 23px;border:1px solid #f2bfd77a;border-radius:99px;background:linear-gradient(120deg,#a65b82bd,#66558dbd);color:#fff5f5;font-size:10px;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;box-shadow:0 8px 34px #d98caf25;backdrop-filter:blur(12px);transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px #d98caf48}.btn.secondary{background:#ffffff08;border-color:#ffffff35}.micro{font-size:9px;letter-spacing:.14em;color:#a99bb8;margin-top:18px}
+.scroll-note{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:.22em;color:#aa9db9;white-space:nowrap}
+.section-title{max-width:650px;margin:0 auto 24px}.section-title h2{font-size:clamp(44px,8vw,72px);margin:15px 0}.section-title p{max-width:480px;margin:0 auto;font-size:13px}
+#galaxy{padding-top:84px;padding-bottom:92px}
+.galaxy-wrap{position:relative;width:min(94vw,760px);height:min(112vw,610px);min-height:450px;margin:28px auto 0;border:1px solid #dfb9e51c;border-radius:49% 51% 45% 55%/47% 44% 56% 53%;background:radial-gradient(ellipse at 50% 50%,#76528b2b,transparent 67%);box-shadow:inset 0 0 90px #a06bb014,0 0 90px #a06bb00d;overflow:hidden}
+.galaxy-wrap:before,.galaxy-wrap:after{content:"";position:absolute;inset:7%;border:1px solid #e9c3e11c;border-radius:50%;transform:rotate(-22deg);pointer-events:none}
+.galaxy-wrap:after{inset:17% 4%;transform:rotate(36deg);border-color:#b6b5f21b}
+#constellation{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.86}
+.starpoint{position:absolute;z-index:3;width:48px;height:48px;transform:translate(-50%,-50%);border:0;background:transparent;padding:0;display:grid;place-items:center;cursor:pointer;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+.starpoint .dot{width:8px;height:8px;border-radius:50%;background:#fff8fc;box-shadow:0 0 8px 3px #f5c4e4,0 0 24px 9px #c38de8a8;animation:twinkle 2.6s ease-in-out infinite}
+.starpoint:before{content:"";position:absolute;width:31px;height:31px;border:1px solid #f2c6e950;border-radius:50%;animation:ripple 3s infinite}
+.starpoint.visited .dot{background:#ffe7a8;box-shadow:0 0 10px 4px #ffe2a5,0 0 28px 12px #efbd8d99}
+.starpoint .tag{position:absolute;top:32px;white-space:nowrap;padding:3px 6px;border-radius:8px;background:#0d0b1bc7;color:#ead9ee;font-size:8px;letter-spacing:.04em}
+@keyframes twinkle{50%{transform:scale(.62);opacity:.7}}@keyframes ripple{50%{transform:scale(1.55);opacity:.2}}
+.galaxy-progress{display:flex;justify-content:center;align-items:center;gap:10px;margin:17px auto 0;color:#bcaecb;font-size:10px;letter-spacing:.12em}.progress-track{width:95px;height:3px;background:#ffffff20;border-radius:4px;overflow:hidden}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--rose),var(--lav));transition:width .5s}
+#portrait-section{padding-top:90px}.portrait-shell{width:min(73vw,310px);aspect-ratio:4/5;margin:28px auto 17px;padding:8px;border:1px solid #efc1df88;border-radius:48% 48% 13px 13px;background:linear-gradient(145deg,#ffffff1b,#ffffff04);box-shadow:0 20px 80px #0008,0 0 45px #d98caf1b;position:relative;overflow:hidden}
+.portrait-shell:after{content:"";position:absolute;inset:0;background:linear-gradient(130deg,transparent 30%,#fff5 48%,transparent 62%);transform:translateX(-130%);animation:shine 7s ease-in-out infinite;pointer-events:none}
+@keyframes shine{35%,100%{transform:translateX(130%)}}
+.portrait-shell img{display:none;width:100%;height:100%;object-fit:cover;border-radius:48% 48% 8px 8px}.photo-empty{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:20px;border-radius:48% 48% 8px 8px;background:linear-gradient(150deg,#59406f,#25172f);color:#f5d7e8}.photo-empty b{font:italic 26px 'Cormorant Garamond',serif}.photo-empty small{font-size:10px;line-height:1.7;color:#d8c4db}
+.upload{display:inline-block;color:#ecc8df;text-decoration:underline;font-size:11px;cursor:pointer}input[type=file]{display:none}
+#letter-section{padding-top:92px}.envelope-area{margin:32px auto 22px;max-width:360px;perspective:900px}
+.envelope{width:100%;height:200px;position:relative;border:1px solid #e7b7d85c;border-radius:8px;background:linear-gradient(145deg,#674362,#332344);box-shadow:0 20px 70px #0006;cursor:pointer;overflow:hidden;transition:transform .35s}
+.envelope:hover{transform:translateY(-4px)}.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(35deg,transparent 49.5%,#e8badc55 50%,transparent 50.5%),linear-gradient(-35deg,transparent 49.5%,#e8badc55 50%,transparent 50.5%);z-index:2}
+.envelope:after{content:"";position:absolute;left:50%;top:50%;width:48px;height:48px;transform:translate(-50%,-50%) rotate(45deg);background:#e8b4cb;border-radius:5px 50% 50%;box-shadow:0 0 28px #e8b4cb77;z-index:3}
+.envelope .env-label{position:absolute;top:24px;left:0;right:0;text-align:center;z-index:4;font:italic 29px 'Cormorant Garamond',serif;color:#fff0f3}
+.envelope .env-hint{position:absolute;bottom:18px;left:0;right:0;z-index:4;font-size:9px;letter-spacing:.16em;color:#f4d8e6}
+.letter-paper{display:none;max-width:680px;margin:25px auto 0;padding:clamp(25px,6vw,55px);background:linear-gradient(135deg,#fff3ee,#f1dce8);color:#40243d;text-align:left;box-shadow:0 25px 100px #0007;position:relative;animation:paperin .7s both}
+.letter-paper.open{display:block}.letter-paper:before{content:"";position:absolute;inset:9px;border:1px solid #bd8aa344;pointer-events:none}
+@keyframes paperin{from{opacity:0;transform:translateY(18px) rotate(-1deg)}to{opacity:1;transform:none}}
+.letter-paper .script{color:#a04f78;font-size:43px}.letter-paper p{color:#563b50;font:19px/1.9 'Cormorant Garamond',serif;margin:12px 0}
+#cake-section{padding-top:86px;padding-bottom:100px}
+.cake-stage{width:min(90vw,460px);height:340px;margin:25px auto 8px;position:relative;display:grid;place-items:center;overflow:hidden;border-radius:24px;background:radial-gradient(ellipse at 50% 72%,#9c5b8c28,transparent 63%);border:1px solid #e5b8d51e}
+.cake{position:relative;width:230px;height:190px;margin-top:52px}
+.plate{position:absolute;bottom:9px;left:0;width:230px;height:22px;border-radius:50%;background:linear-gradient(#f8d9e8,#9d6a91);box-shadow:0 7px 24px #0008}
+.cake-bottom{position:absolute;bottom:27px;left:23px;width:184px;height:78px;border-radius:13px 13px 22px 22px;background:linear-gradient(90deg,#a94f79,#f0b9d1 45%,#9e4b78);box-shadow:inset 0 -13px 0 #8b416d,inset 0 8px 0 #ffe0e9}
+.cake-top{position:absolute;bottom:94px;left:23px;width:184px;height:40px;border-radius:50%;background:linear-gradient(120deg,#ffe6ed,#d98bad);box-shadow:0 5px 0 #a85d86}
+.icing{position:absolute;bottom:76px;left:35px;width:160px;height:22px;border-radius:0 0 40% 40%;background:#ffe7ee;clip-path:polygon(0 0,100% 0,100% 100%,90% 70%,80% 100%,68% 65%,55% 100%,42% 65%,30% 100%,18% 70%,8% 100%,0 75%)}
+.candles{position:absolute;z-index:4;bottom:128px;left:0;right:0;display:flex;justify-content:center;gap:25px}
+.candle{width:8px;height:40px;border-radius:4px;background:repeating-linear-gradient(135deg,#fff0f4 0 5px,#d78ab1 5px 9px);position:relative;cursor:pointer;border:0;padding:0}
+.flame{position:absolute;width:13px;height:20px;left:-2.5px;top:-20px;border-radius:50% 50% 50% 0;transform:rotate(45deg);background:radial-gradient(circle at 65% 65%,#fff7be 0 18%,#ffd26f 35%,#f58c7c 72%,transparent 74%);filter:drop-shadow(0 0 8px #ffbd69);animation:flame 1s infinite alternate;transition:opacity .25s,transform .25s}
+.candle.out .flame{opacity:0;transform:scale(.1) rotate(45deg)}
+@keyframes flame{to{transform:rotate(40deg) scale(.83) translateY(-2px)}}
+.cake-instruction{font-size:10px;color:#c4b5ca;letter-spacing:.1em}
+#cakeMessage{min-height:32px;color:#f2c5d9;font:italic 22px 'Cormorant Garamond',serif}
+footer{text-align:center;padding:28px 18px calc(25px + env(safe-area-inset-bottom));color:#94869f;font-size:8px;letter-spacing:.2em;line-height:1.8}
+.modal{position:fixed;inset:0;z-index:10;display:none;align-items:center;justify-content:center;padding:18px;background:#050510d9;backdrop-filter:blur(13px)}.modal.open{display:flex;animation:fadein .25s}
+.memory-card{width:min(100%,480px);max-height:88svh;overflow-y:auto;overscroll-behavior:contain;padding:32px 24px 24px;border:1px solid #e9b9d45c;border-radius:24px;background:radial-gradient(circle at 50% 0%,#61416e,#20162e 70%);box-shadow:0 20px 100px #000b;text-align:center;position:relative;animation:rise .4s}
+.memory-card .symbol{font-size:26px;color:#f5c6dc}.memory-card h3{font:italic 36px/1.08 'Cormorant Garamond',serif;margin:10px 0 6px;color:#ffe7f1}.memory-card p{font-size:13.5px;line-height:1.8;color:#eed8e8;margin:8px 0 0}
+.memory-media-wrap{width:100%;max-height:44vh;min-height:160px;margin:14px 0 12px;border-radius:16px;overflow:hidden;border:1px solid #f2c6e944;box-shadow:0 12px 35px #0008,0 0 30px #d98caf1e;background:#090715;display:flex;align-items:center;justify-content:center}
+.memory-media-wrap img,.memory-media-wrap video{max-width:100%;max-height:44vh;width:auto;height:auto;object-fit:contain;display:block;border-radius:14px;margin:auto}
+.modal-nav{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:16px}
+.close{position:absolute;right:8px;top:5px;width:44px;height:44px;border:0;background:transparent;color:#f7d9e8;font-size:26px;cursor:pointer}
+@keyframes fadein{from{opacity:0}to{opacity:1}}@keyframes rise{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+#toast{position:fixed;bottom:calc(15px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);z-index:5;background:#281b36e8;border:1px solid #e5b8d944;border-radius:30px;padding:10px 16px;color:#e8d7e8;font-size:10px;letter-spacing:.08em;opacity:0;transition:.4s;pointer-events:none;white-space:nowrap;max-width:calc(100vw - 28px)}
+#toast.show{opacity:1}
+.confetti{position:fixed;z-index:20;top:-20px;pointer-events:none;animation:confettiFall linear forwards}
+@keyframes confettiFall{to{transform:translate3d(var(--drift),110vh,0) rotate(720deg);opacity:0}}
+@media(max-width:600px){
+ .section{padding:76px 18px}.hero{min-height:94svh;min-height:94dvh;padding:calc(55px + env(safe-area-inset-top)) 19px calc(60px + env(safe-area-inset-bottom))}
+ .script{font-size:clamp(39px,11vw,55px)}h1{font-size:clamp(58px,16vw,78px);line-height:.9;margin:18px 0}h2{font-size:clamp(44px,12vw,59px);line-height:.97}
+ .eyebrow{font-size:8px;letter-spacing:.23em}.lead{font-size:13px;line-height:1.8;max-width:350px;margin:18px auto 24px}.btn{min-height:49px;padding:14px 19px;font-size:9px}.micro{font-size:8px}
+ #galaxy{padding:74px 9px 78px}.section-title{padding:0 8px}.section-title p{font-size:12px}
+ .galaxy-wrap{width:min(100%,430px);height:min(125vw,510px);min-height:390px;margin-top:24px;overflow:visible}
+ .starpoint{width:50px;height:50px}.starpoint:before{width:34px;height:34px}.starpoint .tag{top:34px;font-size:7px;letter-spacing:0;padding:3px 5px;background:#0d0b1bd9}
+ .galaxy-progress{font-size:9px;gap:8px}.progress-track{width:76px}.map-help{font-size:9px}
+ #portrait-section,#letter-section,#cake-section{padding:76px 18px}
+ .portrait-shell{width:min(76vw,285px)}#portrait-section>p{font-size:13px;max-width:350px;margin:22px auto}
+ .envelope{height:180px}.envelope .env-label{font-size:27px}.letter-paper{padding:28px 22px}.letter-paper:before{inset:7px}.letter-paper p{font-size:18px;line-height:1.85}.letter-paper .script{font-size:39px}
+ .cake-stage{height:300px}.cake{transform:scale(.86);transform-origin:center center}.cake-instruction{font-size:9px;line-height:1.7}.memory-card{padding:26px 16px 20px;max-height:88svh}.memory-card h3{font-size:30px}.memory-card p{font-size:12.5px}.memory-media-wrap{max-height:38vh;min-height:130px}.memory-media-wrap img,.memory-media-wrap video{max-height:38vh}
+}
+@media(max-width:370px){h1{font-size:55px}.galaxy-wrap{min-height:365px}.starpoint .tag{font-size:6.5px}.letter-paper{padding:25px 18px}.letter-paper p{font-size:17px}}
+@media(hover:none){.btn:hover{transform:none}.starpoint:active .dot{transform:scale(1.7)}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<div class="nebula"></div><canvas id="starfield"></canvas>
+<main>
+<section class="hero" id="home">
+ <div class="hero-content">
+  <div class="script">For Rashi, on her day</div>
+  <div class="eyebrow">NOVEMBER 11 · YOU ARE MY 11:11 · A UNIVERSE MADE OF LITTLE MOMENTS</div>
+  <h1>Somewhere<br>in the <em>stars.</em></h1>
+  <p class="lead">They say 11:11 is for making wishes. I never really believed in that—but for you, I’d believe in anything. If I could gather every little moment with you and turn it into a universe, this is what it looks like.</p>
+  <button class="btn" onclick="goTo('galaxy')">Enter our universe <span>✦</span></button>
+  <div class="micro">A few stars are holding our memories.</div>
+ </div>
+ <div class="scroll-note">SCROLL TO EXPLORE ↓</div>
+</section>
+
+<section class="section" id="galaxy">
+ <div class="section-title"><div class="eyebrow">OUR OWN LITTLE GALAXY</div><h2>Touch a star.<br><em>Find a memory.</em></h2><p>You might call them your "bad photos", but to me, each star holds the most beautiful, real moments of us. Tap each star and see for yourself.</p></div>
+ <div class="galaxy-wrap" id="galaxyMap">
+  <svg id="constellation" viewBox="0 0 700 560" preserveAspectRatio="none" aria-hidden="true">
+   <defs><linearGradient id="glowLine"><stop stop-color="#f0b7d8" stop-opacity=".02"/><stop offset=".5" stop-color="#f0b7d8" stop-opacity=".7"/><stop offset="1" stop-color="#b9b8f5" stop-opacity=".02"/></linearGradient></defs>
+   <path d="M125 150 Q210 60 310 145 T520 130 Q590 225 470 285 T340 420 Q190 485 110 350 Q55 260 125 150" fill="none" stroke="url(#glowLine)" stroke-width="1.5" stroke-dasharray="3 8"/>
+   <path d="M225 225 Q300 170 360 245 Q420 300 475 225 Q435 360 345 355 Q265 355 225 225Z" fill="none" stroke="#eab9dd" stroke-opacity=".4" stroke-width="1.4"/>
+   <path d="M225 225 Q280 285 345 355 Q410 290 475 225" fill="none" stroke="#eab9dd" stroke-opacity=".28"/>
+   <path id="heartPath" d="M350 405 C285 350 225 305 245 255 C263 211 318 222 350 265 C382 222 437 211 455 255 C475 305 415 350 350 405Z" fill="none" stroke="#f5bddb" stroke-width="2" stroke-dasharray="5 8" opacity="0"/>
+  </svg>
+ </div>
+ <div class="galaxy-progress"><span id="progressText">0 OF 10 MEMORIES FOUND</span><span class="progress-track"><span class="progress-fill" id="progressFill"></span></span><span>✧</span></div>
+ <p class="map-help" style="font-size:10px;margin-top:10px;color:#a99bb8">Find all ten stars. The 11th wish is waiting in the heart.</p>
+</section>
+
+<section class="section" id="portrait-section">
+ <div class="eyebrow">THE BRIGHTEST STAR</div><h2>It's always<br><em>been you.</em></h2>
+ <div class="portrait-shell"><img id="herPhoto" src="Her%20bad%20photos/HowPrettySheIs.jpg" alt="Rashi's photo" style="display:block"><div class="photo-empty" id="photoEmpty" style="display:none"><span style="font-size:42px">♡</span><b>Your favourite picture</b><small>Choose Rashi's photo to make<br>this little universe yours.</small></div></div>
+ <label class="upload" for="photoUpload">＋ Change or upload photograph</label><input id="photoUpload" type="file" accept="image/*">
+ <p style="max-width:520px;margin:26px auto">I had no intention of talking to you when my seat changed. And now I could talk to you forever. I guess the universe had a better plan than I did.</p>
+</section>
+
+<section class="section" id="letter-section">
+ <div class="eyebrow">A MESSAGE FROM SOMEONE</div><h2>A little letter,<br><em>just for you.</em></h2>
+ <p>There's something I wanted you to have in your own little corner of the universe.</p>
+ <div class="envelope-area">
+  <button class="envelope" id="envelope" onclick="openLetter()" aria-label="Open your birthday letter">
+   <span class="env-label">For Rashi, with love</span><span class="env-hint">TAP TO OPEN THE LETTER</span>
+  </button>
+ </div>
+ <article class="letter-paper" id="letterPaper">
+  <div class="script">Dear Rashi,</div>
+  <p>Happy birthday, you. ❤️</p>
+  <p>It's still funny to me that this all began because my seating got changed. I wasn't even planning to talk to you. And now you're the person I could talk to for hours and still have a hundred things left to say.</p>
+  <p>I keep our first date in Barsana close to my heart. That Activa ride, you sitting beside me, your hand in mine coming over my shoulder — I wish I could revisit that little moment whenever I wanted.</p>
+  <p>Then came our casual highway dates, the hugs that make everything feel okay, and those kisses. The accidental one, the awkward almost-kiss that made us embarrassed, and then the one that finally happened. Somehow, even the clumsy bits became my favourite memories.</p>
+  <p>They say 11:11 is when you're supposed to make a wish. Honestly, I never really believed in angel numbers, wishing on clocks, or waiting on falling stars. But looking at you... for you, I will believe in it. You are my 11:11—the wish I didn't even know my heart was making, and somehow the best thing that ever came true.</p>
+  <p>I don't need every day to be extraordinary. I just want more ordinary days with you in them. More conversations, more rides, more laughter, more hugs, and more stories that belong only to us.</p>
+  <p>I love you, Rashi. I hope this year is gentle with you, full of beautiful surprises, and gives you a thousand reasons to smile. I hope I get to be beside you for many of them.</p>
+  <p>Happy birthday, my 11:11. My favourite plot twist.</p>
+  <div class="script" style="text-align:right">— Someone ♡</div>
+ </article>
+</section>
+
+<section class="section" id="cake-section">
+ <div class="eyebrow">11:11 · A WISH FOR YOUR NEW YEAR</div><h2>Make a wish,<br><em>birthday girl.</em></h2>
+ <p>Three little flames, one very big 11:11 wish. Tap each candle to blow it out.</p>
+ <div class="cake-stage">
+  <div class="cake">
+   <div class="candles">
+    <button class="candle" aria-label="Blow out candle one" onclick="blowCandle(this)"><span class="flame"></span></button>
+    <button class="candle" aria-label="Blow out candle two" onclick="blowCandle(this)"><span class="flame"></span></button>
+    <button class="candle" aria-label="Blow out candle three" onclick="blowCandle(this)"><span class="flame"></span></button>
+   </div>
+   <div class="cake-top"></div><div class="icing"></div><div class="cake-bottom"></div><div class="plate"></div>
+  </div>
+ </div>
+ <div class="cake-instruction" id="cakeHint">ONE TAP FOR EACH LITTLE FLAME ✨</div>
+ <div id="cakeMessage"></div>
+ <button class="btn secondary" id="celebrateBtn" onclick="celebrate()" style="margin-top:16px">A little more birthday magic</button>
+</section>
+</main>
+<footer>MADE OF STARS & A LITTLE BIT OF LOVE · FOR RASHI AGARWAL · 11:11</footer>
+<div class="modal" id="memoryModal" role="dialog" aria-modal="true" aria-labelledby="memoryTitle">
+ <div class="memory-card">
+  <button class="close" onclick="closeMemory()" aria-label="Close memory">×</button>
+  <div class="symbol" id="memorySymbol">✧</div>
+  <div class="eyebrow" id="memoryKicker">01 · WHERE IT ALL BEGAN</div>
+  <h3 id="memoryTitle">How love looks beside my desk</h3>
+  <div class="memory-media-wrap">
+   <img id="memoryImg" alt="Memory with Rashi" style="display:none">
+   <video id="memoryVideo" controls playsinline preload="auto" style="display:none"></video>
+  </div>
+  <p id="memoryText"></p>
+  <div class="modal-nav">
+   <button class="btn secondary" onclick="prevMemory()" style="padding:10px 18px">← Prev</button>
+   <span id="memoryCounter" style="font-size:10px;color:#cfc1d5;letter-spacing:.12em">1 / 10</span>
+   <button class="btn" onclick="nextMemory()" style="padding:10px 18px">Next →</button>
+  </div>
+ </div>
+</div>
+<div id="toast">A memory is waiting in that star ✦</div>
+<script>
+const memories=[
+ {title:'How love looks beside my desk',kicker:'01 · WHERE IT ALL BEGAN',symbol:'✧',type:'image',media:'Her%20bad%20photos/HowLoveLooksBesideyourdesk.jpg',text:"It still blows my mind that my whole world shifted just because my seat got moved next to yours. I remember stealing quiet glances at you, pretending to be busy with work while my heart was racing. You were sitting right there, completely unaware that you were about to become the best part of my every single day."},
+ {title:'A little closer to you',kicker:'02 · STOLEN GLANCES',symbol:'♡',type:'image',media:'Her%20bad%20photos/HowLoveLooksBesideyourdeskCloser.jpg',text:"The closer you sat, the harder it became to pay attention to anything else. Even the most boring, tiring workdays suddenly became something I looked forward to, just because I could turn my head and see your face right beside me. That little desk quietly became my favourite place in the world."},
+ {title:'That little chuckle of yours',kicker:'03 · MY FAVOURITE SOUND',symbol:'✦',type:'image',media:'Her%20bad%20photos/HerChukle.jpg',text:"There’s this specific, shy little chuckle you let out whenever something catches you off guard or makes you genuinely laugh. You probably don’t even notice you do it, but every single time I hear it, my whole mood instantly lifts. If I could save one sound forever, it would be your laughter."},
+ {title:'Your mischievous devil look',kicker:'04 · PURE MISCHIEF',symbol:'☾',type:'image',media:'Her%20bad%20photos/HerDevilLook.jpg',text:"That unmistakable sparkle in your eyes right when you’re planning drama, teasing me, or pretending to be upset. You try so hard to look dangerous and intimidating, but you just end up looking impossibly cute. I wouldn’t trade this silly, dramatic side of you for anything."},
+ {title:'Cute like a little kitten',kicker:'05 · ADORABLE WITHOUT TRYING',symbol:'♡',type:'image',media:'Her%20bad%20photos/HerSnapLikecat.jpg',text:"You sent me this and my heart completely melted into a puddle. You have this soft, effortless cat-like cuteness that nobody else could ever replicate. Whenever I’m having a rough or heavy day, looking at this instantly makes the world feel warm again."},
+ {title:'How I love teasing you',kicker:'06 · OUR SILLY LITTLE MOMENTS',symbol:'✧',type:'video',media:'Her%20bad%20photos/HowILovetoTeaseHer.mp4',text:"I know I tease you and get on your nerves constantly, but I only do it because your reactions are priceless. The cute pout, the fake anger, and the way you end up laughing at me anyway—there is genuinely nobody else in this universe I’d rather annoy for the rest of my life."},
+ {title:'Walking right behind you',kicker:'07 · ALWAYS BESIDE YOU',symbol:'✦',type:'image',media:'Her%20bad%20photos/HowIwantHertoLookFromBehind.jpg',text:"Whenever we walk together and I see you right in front of me, I catch myself just admiring you. The way you walk, the quiet grace you carry, and the pure comfort of your presence. No matter where life takes us, I promise I’ll always be right here, walking beside you and holding your hand."},
+ {title:'Just how pretty you are',kicker:'08 · NATURALLY BREATHTAKING',symbol:'♥',type:'image',media:'Her%20bad%20photos/HowPrettySheIs.jpg',text:"You always complain and say you don’t look good in candid photos, but look at you. There is a gentle, quiet beauty in you that doesn't need good lighting, filters, or poses. To me, you are the prettiest girl in the world, especially in the moments you aren’t even trying."},
+ {title:'How beautiful you truly are',kicker:'09 · LIGHT IN MY WORLD',symbol:'♡',type:'image',media:'Her%20bad%20photos/HowBeautifullshelooks.jpg',text:"Sometimes I look at you and wonder what good thing I did in life to deserve having you with me. You bring so much peace, softness, and light into my world just by existing. You might call these 'bad photos', but to me, this is what real perfection looks like."},
+ {title:'How we smile together',kicker:'10 · PURE, REAL US',symbol:'✧',type:'image',media:'Her%20bad%20photos/HowWeSmilenotforphotostogather.jpg',text:"Not smiling for the camera, not pretending for anyone else—just you and me, laughing and smiling because we’re together. This is my favourite picture of us. Pure, real, silly, and completely in love."}
+];
+// Preload all assets in the background
+memories.forEach(m=>{if(m.type==='video'){const v=document.createElement('video');v.preload='auto';v.src=m.media}else if(m.media){const img=new Image();img.src=m.media}});
+const positions=[[16,22],[38,14],[62,14],[84,22],[89,48],[82,74],[60,86],[36,86],[14,72],[11,46]];
+const labels=['Beside my desk','A little closer','Her chuckle','Devil look','Cat snap','Teasing you','Walking with you','How pretty','Beautiful you','Our real smile'];
+const map=document.getElementById('galaxyMap'),modal=document.getElementById('memoryModal');let current=0;const found=new Set();
+memories.forEach((m,i)=>{const b=document.createElement('button');b.className='starpoint';b.style.left=positions[i][0]+'%';b.style.top=positions[i][1]+'%';b.setAttribute('aria-label','Open memory: '+m.title);b.innerHTML='<span class="dot"></span><span class="tag">'+labels[i]+'</span>';b.addEventListener('click',()=>openMemory(i,b));map.appendChild(b)});
+function openMemory(i,button){current=i;found.add(i);if(button)button.classList.add('visited');else map.querySelectorAll('.starpoint')[i]?.classList.add('visited');const m=memories[i];document.getElementById('memoryTitle').textContent=m.title;document.getElementById('memoryKicker').textContent=m.kicker;document.getElementById('memorySymbol').textContent=m.symbol;document.getElementById('memoryText').textContent=m.text;document.getElementById('memoryCounter').textContent=(i+1)+' / '+memories.length;const img=document.getElementById('memoryImg'),vid=document.getElementById('memoryVideo');if(m.type==='video'){img.style.display='none';vid.style.display='block';vid.src=m.media;vid.currentTime=0;vid.play().catch(()=>{})}else{vid.pause();vid.style.display='none';img.style.display='block';img.src=m.media}modal.classList.add('open');document.body.style.overflow='hidden';updateProgress()}
+function closeMemory(){modal.classList.remove('open');document.body.style.overflow='';const vid=document.getElementById('memoryVideo');if(vid)vid.pause()}
+function nextMemory(){let n=(current+1)%memories.length;openMemory(n)}
+function prevMemory(){let p=(current-1+memories.length)%memories.length;openMemory(p)}
+modal.addEventListener('click',e=>{if(e.target===modal)closeMemory()});addEventListener('keydown',e=>{if(e.key==='Escape')closeMemory();if(modal.classList.contains('open')){if(e.key==='ArrowRight')nextMemory();if(e.key==='ArrowLeft')prevMemory()}});
+function updateProgress(){let n=found.size;document.getElementById('progressText').textContent=n+' OF 10 MEMORIES FOUND';document.getElementById('progressFill').style.width=(n/10*100)+'%';if(n===10){document.getElementById('heartPath').setAttribute('opacity','1');document.getElementById('heartPath').setAttribute('stroke-dasharray','900');document.getElementById('heartPath').style.animation='drawHeart 3s ease forwards';document.getElementById('toast').textContent='You found all 10 stars. The heart is yours—You’ll always be my 11:11. ✧';showToast()}}
+function goTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}window.goTo=goTo;window.openMemory=openMemory;window.closeMemory=closeMemory;window.nextMemory=nextMemory;window.prevMemory=prevMemory;
+window.openLetter=()=>{document.getElementById('letterPaper').classList.add('open');document.getElementById('envelope').style.display='none';document.getElementById('letterPaper').scrollIntoView({behavior:'smooth',block:'center'})};
+document.getElementById('photoUpload').addEventListener('change',e=>{const f=e.target.files&&e.target.files[0];if(!f)return;const img=document.getElementById('herPhoto');img.src=URL.createObjectURL(f);img.style.display='block';document.getElementById('photoEmpty').style.display='none'});
+let candlesOut=0;window.blowCandle=el=>{if(el.classList.contains('out'))return;el.classList.add('out');candlesOut++;document.getElementById('cakeHint').textContent=(3-candlesOut)+' CANDLE'+(3-candlesOut===1?'':'S')+' LEFT';if(candlesOut===3){document.getElementById('cakeHint').textContent='11:11 WISH MADE ✨';document.getElementById('cakeMessage').textContent='May every 11:11 wish you make come true. You will always be mine. ❤️';confetti(95)}};
+window.celebrate=()=>{confetti(75);document.getElementById('cakeMessage').textContent='If I could make an 11:11 wish, it would always be for a thousand more ordinary days with you. ❤️'};
+function confetti(n){const symbols=['✦','♡','✧','·'];for(let i=0;i<n;i++){const el=document.createElement('span');el.className='confetti';el.textContent=symbols[Math.floor(Math.random()*symbols.length)];el.style.left=Math.random()*100+'vw';el.style.color=['#f4c4db','#e8d7ff','#ffe5b8','#ffffff'][i%4];el.style.fontSize=(10+Math.random()*17)+'px';el.style.setProperty('--drift',(Math.random()*180-90)+'px');el.style.animationDuration=(2.5+Math.random()*3)+'s';document.body.appendChild(el);setTimeout(()=>el.remove(),5700)}}
+let toastTimer;function showToast(){const t=document.getElementById('toast');t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3200)}
+// Original ambient starfield animation; no audio starts without a user action.
+(()=>{const c=document.getElementById('starfield'),ctx=c.getContext('2d');let w,h,dpr,stars=[],shooters=[],pointer={x:0,y:0};function resize(){dpr=Math.min(devicePixelRatio||1,2);w=innerWidth;h=innerHeight;c.width=w*dpr;c.height=h*dpr;c.style.width=w+'px';c.style.height=h+'px';ctx.setTransform(dpr,0,0,dpr,0,0);stars=Array.from({length:Math.min(190,Math.floor(w*h/5600))},()=>({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.25+.25,a:Math.random()*.62+.15,s:Math.random()*.018+.004,p:Math.random()*6.28}))}function draw(t){ctx.clearRect(0,0,w,h);for(const s of stars){let a=s.a+Math.sin(t*s.s+s.p)*.17;ctx.beginPath();ctx.arc(s.x+pointer.x*.006,s.y+pointer.y*.006,s.r,0,Math.PI*2);ctx.fillStyle=`rgba(255,226,246,${Math.max(.04,a)})`;ctx.fill()}for(let i=shooters.length-1;i>=0;i--){const q=shooters[i];q.x+=q.vx;q.y+=q.vy;q.life--;const g=ctx.createLinearGradient(q.x,q.y,q.x-q.vx*17,q.y-q.vy*17);g.addColorStop(0,'#fff');g.addColorStop(1,'transparent');ctx.strokeStyle=g;ctx.lineWidth=1.4;ctx.beginPath();ctx.moveTo(q.x,q.y);ctx.lineTo(q.x-q.vx*17,q.y-q.vy*17);ctx.stroke();if(q.life<=0)shooters.splice(i,1)}if(Math.random()<.004)shooters.push({x:Math.random()*w*.8+w*.1,y:Math.random()*h*.35,vx:4+Math.random()*3,vy:1.5+Math.random()*2,life:42});requestAnimationFrame(draw)}addEventListener('resize',resize);addEventListener('pointermove',e=>{pointer.x=e.clientX-w/2;pointer.y=e.clientY-h/2},{passive:true});resize();requestAnimationFrame(draw)})();
+let toastTimerInit=setTimeout(showToast,2500);
+</script>
+<style>@keyframes drawHeart{from{stroke-dashoffset:900}to{stroke-dashoffset:0}}</style>
+</body></html>
