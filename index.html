@@ -16,14 +16,37 @@ button{font:inherit;touch-action:manipulation}
 button:focus-visible,label:focus-visible{outline:2px solid var(--pink);outline-offset:5px}
 button:active{transform:scale(.98)}
 .cute-hand{font-family:'Dancing Script','Allura',cursive;font-weight:600;letter-spacing:.02em}
-.cute-hand-h2{font-family:'Dancing Script','Allura',cursive;font-size:clamp(44px,8vw,70px);color:var(--pink);font-weight:600;display:inline-block;text-shadow:0 0 24px rgba(242,182,208,.35)}
+.cute-hand-h2{font-family:'Dancing Script','Allura',cursive;font-size:clamp(38px,7vw,62px);line-height:1.2;color:var(--pink);font-weight:600;display:inline-block;margin-top:6px;text-shadow:0 0 24px rgba(242,182,208,.35)}
 .script-whisper{font-family:'Caveat',cursive;font-weight:600}
 .script-cute-accent{font-family:'Dancing Script','Allura',cursive;font-size:clamp(22px,4.5vw,34px);color:var(--pink);line-height:1.2;margin-bottom:6px;text-shadow:0 0 12px rgba(242,182,208,.4)}
 .hero-cute-quote{font-family:'Dancing Script',cursive;font-size:clamp(16px,3.4vw,20px);color:#ffd4e8;margin:16px auto 0;max-width:440px;letter-spacing:.03em;text-shadow:0 0 10px rgba(242,182,208,.3)}
 .letter-salutation{font-family:'Dancing Script','Allura',cursive;font-size:clamp(34px,7vw,48px);color:var(--pink);font-weight:600;margin-bottom:14px;letter-spacing:.02em}
 .letter-signature{font-family:'Dancing Script','Allura',cursive;font-size:clamp(32px,6.5vw,46px);color:#df84ab;font-weight:600;letter-spacing:.03em;text-align:right;margin-top:26px;display:block;text-shadow:0 0 16px rgba(223,132,171,.3)}
 .letter-highlight{font-family:'Dancing Script',cursive;font-size:clamp(17px,3.8vw,21px);line-height:1.6;color:#ffe4f2!important;padding:12px 16px;background:rgba(255,255,255,.04);border-left:2px solid var(--pink);border-radius:0 10px 10px 0;margin:18px 0!important}
-.cake-whisper{font-family:'Dancing Script',cursive;font-size:clamp(16px,3.6vw,20px);color:#ffd8ee;margin-top:8px}
+.wishes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:14px;max-width:920px;margin:28px auto 20px;padding:0 8px}
+.wish-card{background:rgba(255,255,255,.03);border:1px solid rgba(245,189,219,.18);border-radius:18px;padding:16px 18px;text-align:left;cursor:pointer;transition:all .3s cubic-bezier(.2,0,0,1);position:relative;overflow:hidden;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.wish-card:hover{transform:translateY(-3px);border-color:rgba(242,182,208,.5);box-shadow:0 12px 30px rgba(195,141,232,.18)}
+.wish-card.unlocked{background:linear-gradient(145deg,rgba(118,75,155,.24),rgba(189,93,145,.18));border-color:rgba(255,231,168,.45)}
+.wish-header{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.wish-star-icon{width:28px;height:28px;border-radius:50%;background:rgba(242,182,208,.15);border:1px solid rgba(242,182,208,.3);display:grid;place-items:center;color:#ffe7a8;font-size:12px;transition:transform .3s}
+.wish-card:hover .wish-star-icon{transform:rotate(45deg) scale(1.1)}
+.wish-num{font-family:'Dancing Script',cursive;font-size:17px;font-weight:700;color:#f5b6d2}
+.wish-prompt{font-size:12px;font-weight:500;color:#ebd9ef;margin:10px 0 0;display:flex;align-items:center;gap:6px}
+.wish-secret{display:none;font-size:12.5px;line-height:1.75;color:#fff0f8;margin-top:10px;padding-top:10px;border-top:1px dashed rgba(245,189,219,.2);animation:fadein .3s ease}
+.wish-card.unlocked .wish-secret{display:block}
+.wish-card.unlocked .wish-prompt{color:#ffe7a8}
+.wishes-progress{display:flex;justify-content:center;align-items:center;gap:10px;margin:20px auto 0;color:#bcaecb;font-size:10px;letter-spacing:.12em}
+.all-wishes-banner{max-width:520px;margin:22px auto 0;padding:18px 22px;border-radius:20px;border:1px solid rgba(255,231,168,.4);background:radial-gradient(ellipse at 50% 50%,rgba(189,93,145,.3),rgba(20,14,38,.85));box-shadow:0 10px 40px rgba(189,93,145,.25);animation:rise .4s}
+.stardust-particle{position:fixed;z-index:9999;pointer-events:none;font-size:13px;line-height:1;transform:translate(-50%,-50%);animation:driftFade .75s cubic-bezier(.2,0,.2,1) forwards;text-shadow:0 0 8px currentColor}
+@keyframes driftFade{0%{opacity:1;transform:translate(-50%,-50%) scale(.6)}50%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.15);opacity:.9}100%{transform:translate(calc(-50% + var(--dx)*1.5),calc(-50% + var(--dy)*1.5)) scale(.3);opacity:0}}
+.music-pill{position:fixed;top:max(16px,env(safe-area-inset-top,16px));right:16px;z-index:95;display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:99px;background:rgba(24,16,38,.75);border:1px solid rgba(245,189,219,.3);color:#fce4f0;font-size:9.5px;letter-spacing:.08em;cursor:pointer;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 6px 22px rgba(0,0,0,.45);transition:all .25s ease}
+.music-pill:hover{transform:translateY(-2px);border-color:var(--pink);box-shadow:0 8px 28px rgba(217,140,175,.35)}
+.music-pill.playing{background:linear-gradient(120deg,rgba(156,81,121,.85),rgba(95,79,132,.85));border-color:#ffe4b5;color:#fff8f4}
+.music-pill.playing .music-note-icon{animation:bounceNote 1.2s infinite ease-in-out}
+@keyframes bounceNote{0%,100%{transform:scale(1) rotate(0deg)}50%{transform:scale(1.25) rotate(15deg)}}
+.smoke-wisp{position:absolute;top:-30px;left:50%;transform:translateX(-50%);font-size:14px;pointer-events:none;animation:smokeRise 1.4s ease-out forwards}
+.burst-heart{position:absolute;font-size:26px;pointer-events:none;animation:heartFloatUp .9s ease-out forwards;z-index:20}
+@keyframes heartFloatUp{0%{transform:translate(-50%,0) scale(.6);opacity:1}100%{transform:translate(-50%,-80px) scale(1.4);opacity:0}}
 .trail-note{position:absolute;pointer-events:none;z-index:4;white-space:nowrap;color:var(--pink);text-shadow:0 0 14px rgba(242,182,208,.7);opacity:.92}
 .trail-note .cute-hand{font-size:clamp(15px,3.5vw,20px)}
 .trail-note-start{top:2%;left:8%}
@@ -37,12 +60,12 @@ main,footer{position:relative;z-index:1}.section{padding:92px 20px;text-align:ce
 .hero:after{content:"";position:absolute;width:min(70vw,510px);aspect-ratio:1;border:1px solid #eac4e516;border-radius:50%;transform:rotate(45deg) scaleY(.55)}
 @keyframes orbit{to{transform:rotate(360deg)}}
 .hero-content{position:relative;z-index:2;max-width:680px}.script{font:clamp(39px,8vw,67px) 'Sacramento',cursive;color:var(--pink);line-height:1.1}.eyebrow{font-size:9px;letter-spacing:.29em;text-transform:uppercase;color:#dcb9d7;line-height:1.8}
-h1,h2{font:400 clamp(52px,10vw,100px)/.92 'Cormorant Garamond',serif;letter-spacing:-.035em;margin:21px 0}h1 em,h2 em{color:var(--pink);font-weight:400}
+h1,h2{font:400 clamp(44px,8vw,80px)/1.2 'Cormorant Garamond',serif;letter-spacing:-.02em;margin:22px 0 16px}h1 em,h2 em{color:var(--pink);font-weight:400}
 p{color:var(--muted);font-size:14px;line-height:1.9}.lead{max-width:490px;margin:22px auto 29px;font-weight:300}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:14px 23px;border:1px solid #f2bfd77a;border-radius:99px;background:linear-gradient(120deg,#9c5179,#5f4f84);color:#fff5f5;font-size:10px;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;box-shadow:0 8px 30px #d98caf25;transition:transform .2s,box-shadow .2s;will-change:transform}
 .btn:hover{transform:translateY(-2px);box-shadow:0 12px 38px #d98caf44}.btn.secondary{background:#ffffff12;border-color:#ffffff35}.micro{font-size:9px;letter-spacing:.14em;color:#a99bb8;margin-top:18px}
 .scroll-note{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);font-size:9px;letter-spacing:.22em;color:#aa9db9;white-space:nowrap}
-.section-title{max-width:650px;margin:0 auto 24px}.section-title h2{font-size:clamp(44px,8vw,72px);margin:15px 0}.section-title p{max-width:480px;margin:0 auto;font-size:13px}
+.section-title{max-width:650px;margin:0 auto 24px}.section-title h2{font-size:clamp(40px,7.5vw,68px);line-height:1.25;margin:18px 0}.section-title p{max-width:480px;margin:0 auto;font-size:13px}
 #galaxy{padding-top:84px;padding-bottom:92px}
 .galaxy-wrap{position:relative;width:min(96vw,740px);height:min(145vw,880px);min-height:740px;margin:12px auto 0;border:none;background:transparent;box-shadow:none;overflow:visible}
 .galaxy-wrap:before,.galaxy-wrap:after{display:none}
@@ -171,6 +194,7 @@ footer{text-align:center;padding:28px 18px calc(25px + env(safe-area-inset-botto
 </head>
 <body>
 <div class="nebula"></div><canvas id="starfield"></canvas>
+<button id="musicToggle" class="music-pill" onclick="toggleMusic()" aria-label="Play our cosmic melody"><span class="music-note-icon">♪</span><span class="music-text">Our song ♡</span></button>
 <main>
 <section class="hero" id="home">
  <div class="hero-content">
@@ -223,6 +247,24 @@ footer{text-align:center;padding:28px 18px calc(25px + env(safe-area-inset-botto
  </div>
  <div class="galaxy-progress"><span id="progressText">0 OF 10 CHAPTERS FOUND</span><span class="progress-track"><span class="progress-fill" id="progressFill"></span></span><span>✧</span></div>
  <p class="map-help" style="font-size:10px;margin-top:10px;color:#a99bb8">Follow our timeline star by star. The 11:11 secret unlocks at the heart.</p>
+</section>
+
+<section class="section" id="wishes-section">
+ <div class="section-title">
+  <div class="eyebrow">11:11 · ELEVEN REASONS</div>
+  <h2>Why you are<br><span class="cute-hand-h2">my 11:11 ♡</span></h2>
+  <p>11 little stars, 11 little truths about why you mean the entire universe to me. Tap each star to open a secret confession.</p>
+ </div>
+ <div class="wishes-grid" id="wishesGrid"></div>
+ <div class="wishes-progress">
+  <span id="wishesCountText">0 OF 11 CONFESSIONS UNLOCKED</span>
+  <span class="progress-track" style="width:110px"><span class="progress-fill" id="wishesFill"></span></span>
+  <span>♡</span>
+ </div>
+ <div id="allWishesCelebration" class="all-wishes-banner" style="display:none">
+  <div class="cute-hand" style="font-size:25px;color:#ffe4f2;margin-bottom:6px">You unlocked all 11 wishes ✧</div>
+  <p style="margin:0;color:#fae1ee;font-size:13.5px;line-height:1.7">You are my 11:11, Rashi. Today, tomorrow, and across every universe there is. Happy Birthday, my favourite person. ❤️</p>
+ </div>
 </section>
 
 <section class="section" id="portrait-section">
@@ -291,11 +333,12 @@ footer{text-align:center;padding:28px 18px calc(25px + env(safe-area-inset-botto
   <div class="date-badge cute-hand" id="memoryDate" style="font-size:12px;letter-spacing:.04em">THE BEGINNING</div>
   <div class="eyebrow cute-hand" id="memoryKicker" style="font-size:14px;letter-spacing:.02em;text-transform:none;color:#f7cbe0">CHAPTER 01 · BEFORE WE SPOKE</div>
   <h3 id="memoryTitle">The seat that changed everything</h3>
-  <div class="memory-media-wrap">
+  <div class="memory-media-wrap" onclick="sendHeart(event)" title="Tap photo to send love ♡">
    <div class="media-loader" id="mediaLoader"><span class="spinner">✦</span><small>Shining through the stars...</small></div>
    <img id="memoryImg" alt="Memory with Rashi" style="display:none">
    <video id="memoryVideo" controls playsinline webkit-playsinline preload="none" style="display:none"></video>
   </div>
+  <div style="font-size:11px;color:#f5b6d2;margin-top:4px;cursor:pointer" class="cute-hand" onclick="sendHeart(event)">Tap photo to send a little love ♡ <span id="heartCount"></span></div>
   <p id="memoryText"></p>
   <div class="modal-nav">
    <button class="btn secondary" onclick="prevMemory()" style="padding:10px 18px">← Earlier</button>
@@ -338,8 +381,31 @@ let adjIndex=0;setInterval(()=>{adjIndex=(adjIndex+1)%adjectives.length;const el
 let cameraStream=null;
 async function toggleMirror(){const photo=document.getElementById('herPhoto'),video=document.getElementById('selfieVideo'),shell=document.getElementById('portraitShell'),btn=document.getElementById('openCameraBtn'),note=document.getElementById('cameraNote'),flash=document.getElementById('cameraFlash');if(cameraStream){cameraStream.getTracks().forEach(t=>t.stop());cameraStream=null;video.srcObject=null;video.style.display='none';photo.style.display='block';shell.classList.remove('glow-ring');btn.innerHTML='✨ See the most <span id="adjectiveCycle">'+adjectives[adjIndex]+'</span> girl in the universe';note.textContent='';return}if(flash){flash.classList.remove('flash');void flash.offsetWidth;flash.classList.add('flash')}shell.classList.add('glow-ring');note.textContent='Lighting up the universe for you... ✨';try{const stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'user',width:{ideal:1280},height:{ideal:720}}});cameraStream=stream;video.srcObject=stream;video.style.display='block';photo.style.display='none';await video.play();const track=stream.getVideoTracks()[0];if(track&&track.getCapabilities&&track.getCapabilities().torch){track.applyConstraints({advanced:[{torch:true}]}).catch(()=>{})}btn.innerHTML='✦ That’s her. Look at you! (Tap to close mirror)';note.textContent='There she is. My 11:11. The prettiest girl in the whole universe. ❤️';confetti(45)}catch(err){console.error('Camera error:',err);shell.classList.remove('glow-ring');btn.innerHTML='✨ See the most <span id="adjectiveCycle">'+adjectives[adjIndex]+'</span> girl in the universe';note.textContent='Told you: you are the most beautiful girl in the universe. (Allow camera to see your smile!) ♡'}}
 window.toggleMirror=toggleMirror;
-let candlesOut=0;window.blowCandle=el=>{if(el.classList.contains('out'))return;el.classList.add('out');candlesOut++;document.getElementById('cakeHint').textContent=(3-candlesOut)+' CANDLE'+(3-candlesOut===1?'':'S')+' LEFT';if(candlesOut===3){document.getElementById('cakeHint').textContent='11:11 WISH MADE ✨';document.getElementById('cakeMessage').textContent='May every 11:11 wish you make come true. You will always be mine. ❤️';confetti(95)}};
+let candlesOut=0;window.blowCandle=el=>{if(el.classList.contains('out'))return;el.classList.add('out');candlesOut++;const wisp=document.createElement('span');wisp.className='smoke-wisp';wisp.textContent='💨';el.appendChild(wisp);setTimeout(()=>wisp.remove(),1400);document.getElementById('cakeHint').textContent=(3-candlesOut)+' CANDLE'+(3-candlesOut===1?'':'S')+' LEFT';if(candlesOut===3){document.getElementById('cakeHint').textContent='11:11 WISH MADE ✨';document.getElementById('cakeMessage').textContent='May every 11:11 wish you make come true. You will always be mine. ❤️';confetti(95)}};
 window.celebrate=()=>{confetti(75);document.getElementById('cakeMessage').textContent='If I could make an 11:11 wish, it would always be for a thousand more ordinary days with you. ❤️'};
+const elevenWishes=[
+ {num:'01',title:'The Seat Beside You',prompt:'How one seat changed everything',text:'I had no intention of talking to you. But sitting outside next to you turned into the best thing that ever happened to me.'},
+ {num:'02',title:'13th October',prompt:'The day things went up',text:'The night we swapped numbers. From that day on, our late-night conversations and laughs never stopped.'},
+ {num:'03',title:'Walking Behind You',prompt:'Our first date in Barsana',text:'Catching myself just admiring the quiet grace in how you walk. I promise I’ll always walk beside you and hold your hand.'},
+ {num:'04',title:'On The Activa',prompt:'Your hand on my shoulder',text:'You sitting behind me, holding my hand over my shoulder on that ride. I wish I could pause time in that moment.'},
+ {num:'05',title:'Kitten Expressions',prompt:'Your soft, effortless cuteness',text:'When you send me silly candids and look like a sweet little cat. You make heavy days feel completely weightless.'},
+ {num:'06',title:'Teasing You',prompt:'Your fake anger & pouts',text:'I only tease you because your cute reactions and giggles afterward are the sweetest thing in any universe.'},
+ {num:'07',title:'That Little Chuckle',prompt:'My favourite sound in the world',text:'That shy, spontaneous little chuckle you let out when caught off guard. Hearing it instantly makes everything better.'},
+ {num:'08',title:'Your Devil Look',prompt:'Trying to look dangerous',text:'When you narrow your eyes and pretend to be intimidating, but you just end up looking impossibly cute.'},
+ {num:'09',title:'Our Clumsy Moments',prompt:'The accidental almost-kisses',text:'The clumsy, embarrassing almost-kisses that made us blush for hours. Even our awkward bits became my favourite memories.'},
+ {num:'10',title:'How We Smile',prompt:'Real, silly, unposed laughter',text:'Not smiling for any camera or anyone else. Just laughing together because we are completely happy in each other.'},
+ {num:'11',title:'My 11:11 Forever',prompt:'The wish that came true',text:'I never believed in making wishes on clocks. But looking at you, you are my 11:11 — the wish I didn’t know I made, and the best thing that ever came true.'}
+];
+const wishesGrid=document.getElementById('wishesGrid'),unlockedWishes=new Set();
+if(wishesGrid){elevenWishes.forEach((w,idx)=>{const card=document.createElement('div');card.className='wish-card';card.innerHTML='<div class="wish-header"><span class="wish-num">'+w.num+' ✧</span><span class="wish-star-icon">✦</span></div><div class="wish-prompt"><strong>'+w.title+'</strong> — '+w.prompt+'</div><div class="wish-secret">'+w.text+'</div>';card.addEventListener('click',()=>{card.classList.toggle('unlocked');if(card.classList.contains('unlocked')){unlockedWishes.add(idx);confetti(14)}else{unlockedWishes.delete(idx)}const count=unlockedWishes.size;const countEl=document.getElementById('wishesCountText'),fillEl=document.getElementById('wishesFill');if(countEl)countEl.textContent=count+' OF 11 CONFESSIONS UNLOCKED';if(fillEl)fillEl.style.width=(count/11*100)+'%';if(count===11){const cel=document.getElementById('allWishesCelebration');if(cel)cel.style.display='block';confetti(85)}});wishesGrid.appendChild(card)})}
+let audioCtx=null,isMusicPlaying=false,musicTimer=null;
+const melodyNotes=[261.63,329.63,392.00,493.88,523.25,493.88,392.00,329.63,349.23,440.00,523.25,659.25,523.25,440.00,349.23,329.63];
+let noteIdx=0;
+function playMusicNote(freq){if(!audioCtx)return;try{const osc=audioCtx.createOscillator(),gain=audioCtx.createGain();osc.type='sine';osc.frequency.setValueAtTime(freq,audioCtx.currentTime);const osc2=audioCtx.createOscillator(),gain2=audioCtx.createGain();osc2.type='triangle';osc2.frequency.setValueAtTime(freq*2,audioCtx.currentTime);gain.gain.setValueAtTime(0.04,audioCtx.currentTime);gain.gain.exponentialRampToValueAtTime(0.0001,audioCtx.currentTime+1.1);gain2.gain.setValueAtTime(0.015,audioCtx.currentTime);gain2.gain.exponentialRampToValueAtTime(0.0001,audioCtx.currentTime+0.75);osc.connect(gain);osc2.connect(gain2);gain.connect(audioCtx.destination);gain2.connect(audioCtx.destination);osc.start();osc2.start();osc.stop(audioCtx.currentTime+1.2);osc2.stop(audioCtx.currentTime+0.8)}catch(e){}}
+function toggleMusic(){const btn=document.getElementById('musicToggle');if(!audioCtx)audioCtx=new(window.AudioContext||window.webkitAudioContext)();if(audioCtx.state==='suspended')audioCtx.resume();isMusicPlaying=!isMusicPlaying;if(isMusicPlaying){btn.classList.add('playing');btn.querySelector('.music-text').textContent='Playing for you ♡';noteIdx=0;musicTimer=setInterval(()=>{playMusicNote(melodyNotes[noteIdx%melodyNotes.length]);noteIdx++},420)}else{btn.classList.remove('playing');btn.querySelector('.music-text').textContent='Our song ♡';clearInterval(musicTimer)}}
+let heartCounter=0;function sendHeart(e){heartCounter++;const countEl=document.getElementById('heartCount');if(countEl)countEl.textContent='· '+heartCounter+' loves sent ❤️';const h=document.createElement('span');h.className='burst-heart';h.textContent='❤️';const wrap=document.querySelector('.memory-media-wrap');const rect=wrap?wrap.getBoundingClientRect():{left:0,top:0};const x=e.clientX?(e.clientX-rect.left):(wrap?wrap.clientWidth/2:100);const y=e.clientY?(e.clientY-rect.top):(wrap?wrap.clientHeight/2:80);h.style.left=x+'px';h.style.top=y+'px';if(wrap)wrap.appendChild(h);setTimeout(()=>h.remove(),900)}window.sendHeart=sendHeart;
+window.toggleMusic=toggleMusic;
+(()=>{let lastTime=0;const symbols=['✦','✧','♡','·','⋆'];const colors=['#f5bddb','#ffe4b5','#c49ceb','#ffffff'];function spawnDust(x,y){const el=document.createElement('span');el.className='stardust-particle';el.textContent=symbols[Math.floor(Math.random()*symbols.length)];el.style.left=x+'px';el.style.top=y+'px';el.style.color=colors[Math.floor(Math.random()*colors.length)];const driftX=(Math.random()-0.5)*36;const driftY=-12-Math.random()*22;el.style.setProperty('--dx',driftX+'px');el.style.setProperty('--dy',driftY+'px');document.body.appendChild(el);setTimeout(()=>el.remove(),750)}function handleMove(e){const now=performance.now();if(now-lastTime<45)return;lastTime=now;const x=e.clientX||(e.touches&&e.touches[0]?e.touches[0].clientX:0);const y=e.clientY||(e.touches&&e.touches[0]?e.touches[0].clientY:0);if(x&&y)spawnDust(x,y)}window.addEventListener('pointermove',handleMove,{passive:true})})();
 function confetti(n){const symbols=['✦','♡','✧','·'];for(let i=0;i<n;i++){const el=document.createElement('span');el.className='confetti';el.textContent=symbols[Math.floor(Math.random()*symbols.length)];el.style.left=Math.random()*100+'vw';el.style.color=['#f4c4db','#e8d7ff','#ffe5b8','#ffffff'][i%4];el.style.fontSize=(10+Math.random()*17)+'px';el.style.setProperty('--drift',(Math.random()*180-90)+'px');el.style.animationDuration=(2.5+Math.random()*3)+'s';document.body.appendChild(el);setTimeout(()=>el.remove(),5700)}}
 let toastTimer;function showToast(){const t=document.getElementById('toast');t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3200)}
 // High-performance batched starfield
