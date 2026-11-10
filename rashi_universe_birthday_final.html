@@ -23,20 +23,18 @@ button:active{transform:scale(.98)}
 .letter-salutation{font-family:'Dancing Script','Allura',cursive;font-size:clamp(34px,7vw,48px);color:var(--pink);font-weight:600;margin-bottom:14px;letter-spacing:.02em}
 .letter-signature{font-family:'Dancing Script','Allura',cursive;font-size:clamp(32px,6.5vw,46px);color:#df84ab;font-weight:600;letter-spacing:.03em;text-align:right;margin-top:26px;display:block;text-shadow:0 0 16px rgba(223,132,171,.3)}
 .letter-highlight{font-family:'Dancing Script',cursive;font-size:clamp(17px,3.8vw,21px);line-height:1.6;color:#ffe4f2!important;padding:12px 16px;background:rgba(255,255,255,.04);border-left:2px solid var(--pink);border-radius:0 10px 10px 0;margin:18px 0!important}
-.wishes-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:14px;max-width:920px;margin:28px auto 20px;padding:0 8px}
-.wish-card{background:rgba(255,255,255,.03);border:1px solid rgba(245,189,219,.18);border-radius:18px;padding:16px 18px;text-align:left;cursor:pointer;transition:all .3s cubic-bezier(.2,0,0,1);position:relative;overflow:hidden;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
-.wish-card:hover{transform:translateY(-3px);border-color:rgba(242,182,208,.5);box-shadow:0 12px 30px rgba(195,141,232,.18)}
-.wish-card.unlocked{background:linear-gradient(145deg,rgba(118,75,155,.24),rgba(189,93,145,.18));border-color:rgba(255,231,168,.45)}
-.wish-header{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.wish-star-icon{width:28px;height:28px;border-radius:50%;background:rgba(242,182,208,.15);border:1px solid rgba(242,182,208,.3);display:grid;place-items:center;color:#ffe7a8;font-size:12px;transition:transform .3s}
-.wish-card:hover .wish-star-icon{transform:rotate(45deg) scale(1.1)}
-.wish-num{font-family:'Dancing Script',cursive;font-size:17px;font-weight:700;color:#f5b6d2}
-.wish-prompt{font-size:12px;font-weight:500;color:#ebd9ef;margin:10px 0 0;display:flex;align-items:center;gap:6px}
-.wish-secret{display:none;font-size:12.5px;line-height:1.75;color:#fff0f8;margin-top:10px;padding-top:10px;border-top:1px dashed rgba(245,189,219,.2);animation:fadein .3s ease}
-.wish-card.unlocked .wish-secret{display:block}
-.wish-card.unlocked .wish-prompt{color:#ffe7a8}
-.wishes-progress{display:flex;justify-content:center;align-items:center;gap:10px;margin:20px auto 0;color:#bcaecb;font-size:10px;letter-spacing:.12em}
-.all-wishes-banner{max-width:520px;margin:22px auto 0;padding:18px 22px;border-radius:20px;border:1px solid rgba(255,231,168,.4);background:radial-gradient(ellipse at 50% 50%,rgba(189,93,145,.3),rgba(20,14,38,.85));box-shadow:0 10px 40px rgba(189,93,145,.25);animation:rise .4s}
+.reason-showcase{position:relative;width:100%;min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:26px 18px;border-radius:18px;background:linear-gradient(145deg,rgba(118,75,155,.36),rgba(189,93,145,.24),rgba(255,231,168,.12));border:1px solid rgba(255,231,168,.35);box-shadow:inset 0 0 35px rgba(245,189,219,.15),0 12px 35px rgba(0,0,0,.35);text-align:center;cursor:pointer}
+.reason-badge-top{display:inline-block;padding:4px 14px;border-radius:99px;background:rgba(255,231,168,.16);border:1px solid rgba(255,231,168,.4);color:#ffe7a8;font-size:11.5px;letter-spacing:.05em;margin-bottom:12px;text-shadow:0 0 10px rgba(255,231,168,.6)}
+.reason-big-icon{font-size:32px;color:#f5bddb;text-shadow:0 0 18px rgba(245,189,219,.85);animation:heartPulse 2.2s infinite ease-in-out;margin-bottom:10px}
+.reason-highlight-quote{font-size:clamp(17px,3.8vw,23px);line-height:1.45;color:#fff2fa;text-shadow:0 0 16px rgba(242,182,208,.4);max-width:420px;margin:0 auto}
+.reason-whisper{margin-top:12px;font-size:10px;color:#dfc3dc;letter-spacing:.06em}
+.gallery-bar{display:flex;justify-content:center;gap:6px;margin:8px 0 4px;flex-wrap:wrap}
+.gal-pill{font-size:9.5px;padding:4px 11px;border-radius:99px;border:1px solid rgba(245,189,219,.3);background:rgba(255,255,255,.06);color:#fce4f3;cursor:pointer;transition:all .2s ease}
+.gal-pill.active{background:linear-gradient(135deg,rgba(189,93,145,.5),rgba(242,182,208,.3));border-color:#f5b6d2;color:#fff;font-weight:600}
+.starpoint.reason-star .dot{background:#ffeaa7;box-shadow:0 0 12px 5px #ffd875,0 0 28px 10px rgba(255,200,90,.65)}
+.starpoint.reason-star .star-badge{color:#ffe7a8;text-shadow:0 0 10px rgba(255,231,168,.9)}
+.starpoint.reason-star .tag{border-color:rgba(255,231,168,.35);background:rgba(28,18,42,.78);color:#fff2d4}
+.starpoint.reason-star:before{border-color:rgba(255,231,168,.4)}
 .stardust-particle{position:fixed;z-index:9999;pointer-events:none;font-size:13px;line-height:1;transform:translate(-50%,-50%);animation:driftFade .75s cubic-bezier(.2,0,.2,1) forwards;text-shadow:0 0 8px currentColor}
 @keyframes driftFade{0%{opacity:1;transform:translate(-50%,-50%) scale(.6)}50%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.15);opacity:.9}100%{transform:translate(calc(-50% + var(--dx)*1.5),calc(-50% + var(--dy)*1.5)) scale(.3);opacity:0}}
 .music-pill{position:fixed;top:max(16px,env(safe-area-inset-top,16px));right:16px;z-index:95;display:inline-flex;align-items:center;gap:7px;padding:7px 14px;border-radius:99px;background:rgba(24,16,38,.75);border:1px solid rgba(245,189,219,.3);color:#fce4f0;font-size:9.5px;letter-spacing:.08em;cursor:pointer;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 6px 22px rgba(0,0,0,.45);transition:all .25s ease}
@@ -225,13 +223,13 @@ footer{text-align:center;padding:28px 18px calc(25px + env(safe-area-inset-botto
 
 <section class="section" id="galaxy">
  <div class="section-title">
-  <div class="eyebrow">OUR TIMELINE IN THE STARS</div>
+  <div class="eyebrow">11:11 · OUR TIMELINE & REASONS TO LOVE</div>
   <h2>From the beginning<br><span class="cute-hand-h2">to our 11:11 ♡</span></h2>
-  <p>Follow the little stardust trail from where it all began to where we are today.</p>
+  <p>11 chapters of memories, laughs, and reasons why you are my whole universe. Follow the stardust trail to our 11:11.</p>
  </div>
  <div class="galaxy-wrap" id="galaxyMap">
   <div class="trail-note trail-note-start"><span class="cute-hand">where our story began... ✦</span></div>
-  <div class="trail-note trail-note-mid"><span class="cute-hand">"walking right beside you..." ♡</span></div>
+  <div class="trail-note trail-note-mid" style="top:27%;right:5%"><span class="cute-hand">"walking right beside you..." ♡</span></div>
   <div class="trail-note trail-note-end"><span class="cute-hand">to our 11:11, forever ♡</span></div>
   <svg id="constellation" viewBox="0 0 1000 1200" preserveAspectRatio="none" aria-hidden="true">
    <defs>
@@ -241,45 +239,29 @@ footer{text-align:center;padding:28px 18px calc(25px + env(safe-area-inset-botto
    <line x1="90" y1="300" x2="910" y2="300" stroke="rgba(242,198,233,.05)" stroke-dasharray="4 8"/>
    <line x1="90" y1="600" x2="910" y2="600" stroke="rgba(242,198,233,.05)" stroke-dasharray="4 8"/>
    <line x1="90" y1="900" x2="910" y2="900" stroke="rgba(242,198,233,.05)" stroke-dasharray="4 8"/>
-   <path d="M 240 96 C 306.7 114.0, 553.3 166.0, 640 204 C 726.7 242.0, 786.7 284.0, 760 324 C 733.3 364.0, 566.7 404.0, 480 444 C 393.3 484.0, 246.7 524.0, 240 564 C 233.3 604.0, 353.3 644.0, 440 684 C 526.7 724.0, 746.7 764.0, 760 804 C 773.3 844.0, 603.3 886.0, 520 924 C 436.7 962.0, 250.0 998.0, 260 1032 C 270.0 1066.0, 526.7 1112.0, 580 1128" fill="none" stroke="rgba(215, 140, 205, 0.18)" stroke-width="16" stroke-linecap="round"/>
-   <path id="timelineTrack" d="M 240 96 C 306.7 114.0, 553.3 166.0, 640 204 C 726.7 242.0, 786.7 284.0, 760 324 C 733.3 364.0, 566.7 404.0, 480 444 C 393.3 484.0, 246.7 524.0, 240 564 C 233.3 604.0, 353.3 644.0, 440 684 C 526.7 724.0, 746.7 764.0, 760 804 C 773.3 844.0, 603.3 886.0, 520 924 C 436.7 962.0, 250.0 998.0, 260 1032 C 270.0 1066.0, 526.7 1112.0, 580 1128" fill="none" stroke="url(#pathGrad)" stroke-width="2.5" stroke-dasharray="6 8" stroke-linecap="round"/>
-   <path id="progressLine" d="M 240 96 C 306.7 114.0, 553.3 166.0, 640 204 C 726.7 242.0, 786.7 284.0, 760 324 C 733.3 364.0, 566.7 404.0, 480 444 C 393.3 484.0, 246.7 524.0, 240 564 C 233.3 604.0, 353.3 644.0, 440 684 C 526.7 724.0, 746.7 764.0, 760 804 C 773.3 844.0, 603.3 886.0, 520 924 C 436.7 962.0, 250.0 998.0, 260 1032 C 270.0 1066.0, 526.7 1112.0, 580 1128" fill="none" stroke="url(#activeGrad)" stroke-width="3" stroke-linecap="round" stroke-dasharray="2100" stroke-dashoffset="2100" style="transition: stroke-dashoffset .8s cubic-bezier(.4,0,.2,1)"/>
-   <circle cx="240" cy="96" r="14" fill="none" stroke="rgba(245,189,219,.24)" stroke-dasharray="2 3"/>
-   <circle cx="640" cy="204" r="14" fill="none" stroke="rgba(245,189,219,.24)" stroke-dasharray="2 3"/>
-   <circle cx="760" cy="324" r="14" fill="none" stroke="rgba(245,189,219,.24)" stroke-dasharray="2 3"/>
-   <circle cx="480" cy="444" r="14" fill="none" stroke="rgba(245,189,219,.24)" stroke-dasharray="2 3"/>
-   <circle cx="240" cy="564" r="14" fill="none" stroke="rgba(245,189,219,.24)" stroke-dasharray="2 3"/>
-   <circle cx="440" cy="684" r="14" fill="none" stroke="rgba(245,189,219,.24)" stroke-dasharray="2 3"/>
-   <circle cx="760" cy="804" r="14" fill="none" stroke="rgba(245,189,219,.24)" stroke-dasharray="2 3"/>
-   <circle cx="520" cy="924" r="14" fill="none" stroke="rgba(245,189,219,.24)" stroke-dasharray="2 3"/>
-   <circle cx="260" cy="1032" r="14" fill="none" stroke="rgba(245,189,219,.24)" stroke-dasharray="2 3"/>
+   <path d="M 240 84 C 310.0 100.0, 573.3 146.0, 660 180 C 746.7 214.0, 793.3 254.0, 760 288 C 726.7 322.0, 550.0 350.0, 460 384 C 370.0 418.0, 210.0 456.0, 220 492 C 230.0 528.0, 426.7 564.0, 520 600 C 613.3 636.0, 810.0 672.0, 780 708 C 750.0 744.0, 363.3 780.0, 340 816 C 316.7 852.0, 650.0 888.0, 640 924 C 630.0 960.0, 290.0 998.0, 280 1032 C 270.0 1066.0, 530.0 1112.0, 580 1128" fill="none" stroke="rgba(215, 140, 205, 0.18)" stroke-width="16" stroke-linecap="round"/>
+   <path id="timelineTrack" d="M 240 84 C 310.0 100.0, 573.3 146.0, 660 180 C 746.7 214.0, 793.3 254.0, 760 288 C 726.7 322.0, 550.0 350.0, 460 384 C 370.0 418.0, 210.0 456.0, 220 492 C 230.0 528.0, 426.7 564.0, 520 600 C 613.3 636.0, 810.0 672.0, 780 708 C 750.0 744.0, 363.3 780.0, 340 816 C 316.7 852.0, 650.0 888.0, 640 924 C 630.0 960.0, 290.0 998.0, 280 1032 C 270.0 1066.0, 530.0 1112.0, 580 1128" fill="none" stroke="url(#pathGrad)" stroke-width="2.5" stroke-dasharray="6 8" stroke-linecap="round"/>
+   <path id="progressLine" d="M 240 84 C 310.0 100.0, 573.3 146.0, 660 180 C 746.7 214.0, 793.3 254.0, 760 288 C 726.7 322.0, 550.0 350.0, 460 384 C 370.0 418.0, 210.0 456.0, 220 492 C 230.0 528.0, 426.7 564.0, 520 600 C 613.3 636.0, 810.0 672.0, 780 708 C 750.0 744.0, 363.3 780.0, 340 816 C 316.7 852.0, 650.0 888.0, 640 924 C 630.0 960.0, 290.0 998.0, 280 1032 C 270.0 1066.0, 530.0 1112.0, 580 1128" fill="none" stroke="url(#activeGrad)" stroke-width="3" stroke-linecap="round" stroke-dasharray="3500" stroke-dashoffset="3500" style="transition: stroke-dashoffset .8s cubic-bezier(.4,0,.2,1)"/>
+   <circle cx="240" cy="84" r="14" fill="none" stroke="rgba(245,189,219,.24)" stroke-dasharray="2 3"/>
+   <circle cx="660" cy="180" r="14" fill="none" stroke="rgba(245,189,219,.24)" stroke-dasharray="2 3"/>
+   <circle cx="760" cy="288" r="14" fill="none" stroke="rgba(245,189,219,.24)" stroke-dasharray="2 3"/>
+   <circle cx="460" cy="384" r="14" fill="none" stroke="rgba(255,231,168,.3)" stroke-dasharray="2 3"/>
+   <circle cx="220" cy="492" r="14" fill="none" stroke="rgba(245,189,219,.24)" stroke-dasharray="2 3"/>
+   <circle cx="520" cy="600" r="14" fill="none" stroke="rgba(245,189,219,.24)" stroke-dasharray="2 3"/>
+   <circle cx="780" cy="708" r="14" fill="none" stroke="rgba(245,189,219,.24)" stroke-dasharray="2 3"/>
+   <circle cx="340" cy="816" r="14" fill="none" stroke="rgba(255,231,168,.3)" stroke-dasharray="2 3"/>
+   <circle cx="640" cy="924" r="14" fill="none" stroke="rgba(245,189,219,.24)" stroke-dasharray="2 3"/>
+   <circle cx="280" cy="1032" r="14" fill="none" stroke="rgba(245,189,219,.24)" stroke-dasharray="2 3"/>
    <g id="destinationHeart" transform="translate(580, 1128)">
     <path id="heartPath" d="M 0 18 C -22 -6 -32 -26 -16 -40 C -4 -50 0 -38 0 -28 C 0 -38 4 -50 16 -40 C 32 -26 22 -6 0 18 Z" fill="rgba(245, 189, 219, 0.08)" stroke="#f5bddb" stroke-width="1.8" stroke-dasharray="4 4" opacity="0.45"/>
     <text x="0" y="-30" text-anchor="middle" font-family="'Sacramento', cursive" font-size="14" fill="#ffe7a8" opacity="0.9">11:11</text>
    </g>
   </svg>
  </div>
- <div class="galaxy-progress"><span id="progressText">0 OF 10 CHAPTERS FOUND</span><span class="progress-track"><span class="progress-fill" id="progressFill"></span></span><span>✧</span></div>
+ <div class="galaxy-progress"><span id="progressText">0 OF 11 CHAPTERS FOUND</span><span class="progress-track"><span class="progress-fill" id="progressFill"></span></span><span>✧</span></div>
  <p class="map-help" style="font-size:10px;margin-top:10px;color:#a99bb8">Follow our timeline star by star. The 11:11 secret unlocks at the heart.</p>
 </section>
 
-<section class="section" id="wishes-section">
- <div class="section-title">
-  <div class="eyebrow">11:11 · ELEVEN REASONS</div>
-  <h2>Why you are<br><span class="cute-hand-h2">my 11:11 ♡</span></h2>
-  <p>11 little stars, 11 little truths about why you mean the entire universe to me. Tap each star to open a secret confession.</p>
- </div>
- <div class="wishes-grid" id="wishesGrid"></div>
- <div class="wishes-progress">
-  <span id="wishesCountText">0 OF 11 CONFESSIONS UNLOCKED</span>
-  <span class="progress-track" style="width:110px"><span class="progress-fill" id="wishesFill"></span></span>
-  <span>♡</span>
- </div>
- <div id="allWishesCelebration" class="all-wishes-banner" style="display:none">
-  <div class="cute-hand" style="font-size:25px;color:#ffe4f2;margin-bottom:6px">You unlocked all 11 wishes ✧</div>
-  <p style="margin:0;color:#fae1ee;font-size:13.5px;line-height:1.7">You are my 11:11, Rashi. Today, tomorrow, and across every universe there is. Happy Birthday, my favourite person. ❤️</p>
- </div>
-</section>
 
 <section class="section" id="portrait-section">
  <div class="eyebrow">THE BRIGHTEST STAR</div><h2>It's always<br><span class="cute-hand-h2">been you ♡</span></h2>
@@ -360,16 +342,27 @@ footer{text-align:center;padding:28px 18px calc(25px + env(safe-area-inset-botto
    </div>
    <button class="audio-toggle-btn" id="cardAudioBtn" aria-label="Toggle song playback">❚❚</button>
   </div>
-  <div class="memory-media-wrap" onclick="sendHeart(event)" title="Tap photo to send love ♡">
+  <div class="memory-media-wrap" onclick="sendHeart(event)" title="Tap to send love ♡">
    <div class="media-loader" id="mediaLoader"><span class="spinner">✦</span><small>Shining through the stars...</small></div>
    <img id="memoryImg" alt="Memory with Rashi" style="display:none">
    <video id="memoryVideo" controls playsinline webkit-playsinline preload="none" style="display:none"></video>
+   <div class="reason-showcase" id="reasonShowcase" style="display:none">
+    <div class="reason-badge-top"><span class="cute-hand">✦ A Reason to Love You ✦</span></div>
+    <div class="reason-big-icon">♡</div>
+    <div class="reason-highlight-quote cute-hand" id="reasonQuote"></div>
+    <div class="reason-whisper">Tap card to send love ❤️</div>
+   </div>
   </div>
-  <div style="font-size:11px;color:#f5b6d2;margin-top:4px;cursor:pointer" class="cute-hand" onclick="sendHeart(event)">Tap photo to send a little love ♡ <span id="heartCount"></span></div>
+  <div class="gallery-bar" id="galleryBar" style="display:none">
+   <button type="button" class="gal-pill active" onclick="selectGalleryPhoto(event, 0)">1 · Walking behind you</button>
+   <button type="button" class="gal-pill" onclick="selectGalleryPhoto(event, 1)">2 · Pretty in Barsana</button>
+   <button type="button" class="gal-pill" onclick="selectGalleryPhoto(event, 2)">3 · Pure beauty</button>
+  </div>
+  <div style="font-size:11px;color:#f5b6d2;margin-top:4px;cursor:pointer" class="cute-hand" onclick="sendHeart(event)"><span id="tapPrompt">Tap photo to send a little love ♡</span> <span id="heartCount"></span></div>
   <p id="memoryText"></p>
   <div class="modal-nav">
    <button class="btn secondary" onclick="prevMemory()" style="padding:10px 18px">← Earlier</button>
-   <span id="memoryCounter" style="font-size:10px;color:#cfc1d5;letter-spacing:.12em">1 / 10</span>
+   <span id="memoryCounter" style="font-size:10px;color:#cfc1d5;letter-spacing:.12em">1 / 11</span>
    <button class="btn" onclick="nextMemory()" style="padding:10px 18px">Later →</button>
   </div>
  </div>
@@ -377,35 +370,135 @@ footer{text-align:center;padding:28px 18px calc(25px + env(safe-area-inset-botto
 <div id="toast">A memory is waiting in that star ✦</div>
 <script>
 const memories=[
- {date:'THE BEGINNING',title:'The seat that changed everything',kicker:'CHAPTER 01 · BEFORE WE SPOKE',symbol:'✧',type:'image',media:'photos/HowLoveLooksBesideyourdesk.jpg',song:{title:'Saibo',artist:'Shreya Ghoshal & Tochi Raina · Shor in the City',src:'audio/card01_saibo.mp3'},text:"My seating got changed to outside right beside you. Initially, I had planned not to talk to you at all—I saw you, thought of you as way too talkative, and to be honest, all I wanted was for you to be quiet so I could have some peace. I had no intention of talking to you. But I had no idea that one small change would bring someone into my life who I would never want to stop talking to."},
- {date:'13 OCTOBER',title:'The day things went up',kicker:'13 OCT · CHAPTER 02',symbol:'♡',type:'image',media:'photos/HowLoveLooksBesideyourdeskCloser.jpg',song:{title:'Apna Bana Le',artist:'Arijit Singh · Bhediya',src:'audio/card02_apna_bana_le.mp3'},text:"On 13th October, we finally exchanged numbers, and from that day on, things just went up. The quiet stolen glances beside our desks turned into late-night texts, shared jokes, and conversations that stretched for hours. That was the day our little world truly began to take off."},
- {date:'27 OCTOBER',title:'Our first date — Barsana',kicker:'27 OCT · OUR FIRST DATE',symbol:'✦',type:'image',media:'photos/HowIwantHertoLookFromBehind.jpg',song:{title:'Hawayein',artist:'Arijit Singh · Jab Harry Met Sejal',src:'audio/card03_hawayein.mp3'},text:"Barsana. 27th October, our first date. I didn't know that this day would become one of those memories I replay with the biggest smile. I'm so glad we went. Whenever we walk together and I see you right in front of me, I catch myself just admiring you. The way you walk, the quiet grace you carry, and the pure comfort of your presence. No matter where life takes us, I promise I’ll always be right here, walking beside you and holding your hand."},
- {date:'27 OCTOBER',title:'Just how pretty you are',kicker:'BARSANA · BREATHTAKING',symbol:'♥',type:'image',media:'photos/HowPrettySheIs.jpg',song:{title:'Tum Se Hi',artist:'Mohit Chauhan · Jab We Met',src:'audio/card04_tum_se_hi.mp3'},text:"You always complain and say you don’t look good in candid photos, but look at you here in Barsana. There is a gentle, quiet beauty in you that doesn't need good lighting, filters, or poses. To me, you are the prettiest girl in the world, especially in the moments you aren’t even trying."},
- {date:'27 OCTOBER',title:'How beautiful you truly are',kicker:'BARSANA · MY WHOLE WORLD',symbol:'♡',type:'image',media:'photos/HowBeautifullshelooks.jpg',song:{title:'Kaise Hua',artist:'Vishal Mishra · Kabir Singh',src:'audio/card05_kaise_hua.mp3'},text:"Standing there in Barsana, looking at you, I caught myself wondering what good thing I did in life to deserve having you with me. You bring so much peace, softness, and light into my world just by existing. You might call these 'bad photos', but to me, this is what real perfection looks like."},
- {date:'MID OCTOBER',title:'Cute like a little kitten',kicker:'SWEET CANDIDS',symbol:'♡',type:'image',media:'photos/HerSnapLikecat.jpg',song:{title:'Heeriye',artist:'Jasleen Royal & Arijit Singh',src:'audio/card06_heeriye.mp3'},text:"You sent me this and my heart completely melted into a puddle. You have this soft, effortless cat-like cuteness that nobody else could ever replicate. Whenever I’m having a rough or heavy day, looking at this instantly makes the world feel warm again."},
- {date:'EARLY NOVEMBER',title:'How I love teasing you',kicker:'OUR SILLY MOMENTS',symbol:'✧',type:'video',media:'photos/HowILovetoTeaseHer.mp4',song:{title:'Matargashti',artist:'Mohit Chauhan · Tamasha',src:'audio/card07_matargashti.mp3'},text:"I know I tease you and get on your nerves constantly, but I only do it because your reactions are priceless. The cute pout, the fake anger, and the way you end up laughing at me anyway—there is genuinely nobody else in this universe I’d rather annoy for the rest of my life."},
- {date:'EVERY SINGLE DAY',title:'That little chuckle of yours',kicker:'MY FAVOURITE SOUND',symbol:'✦',type:'image',media:'photos/HerChukle.jpg',song:{title:'Zehnaseeb',artist:'Chinmayi & Shekhar Ravjiani · Hasee Toh Phasee',src:'audio/card08_zehnaseeb.mp3'},text:"There’s this specific, shy little chuckle you let out whenever something catches you off guard or makes you genuinely laugh. You probably don’t even notice you do it, but every single time I hear it, my whole mood instantly lifts. If I could save one sound forever, it would be your laughter."},
- {date:'OUR PLAYFUL SIDE',title:'Your mischievous devil look',kicker:'PURE MISCHIEF',symbol:'☾',type:'image',media:'photos/HerDevilLook.jpg',song:{title:'Chor Bazari',artist:'Sunidhi Chauhan & Neeraj · Love Aaj Kal',src:'audio/card09_chor_bazari.mp3'},text:"That unmistakable sparkle in your eyes right when you’re planning drama, teasing me, or pretending to be upset. You try so hard to look dangerous and intimidating, but you just end up looking impossibly cute. I wouldn’t trade this silly, dramatic side of you for anything."},
- {date:'NOVEMBER · PRESENT',title:'How we smile together',kicker:'CHAPTER 10 · PURE, REAL US',symbol:'✧',type:'image',media:'photos/HowWeSmilenotforphotostogather.jpg',song:{title:'Enna Sona',artist:'Arijit Singh · OK Jaanu',src:'audio/card10_enna_sona.mp3'},text:"Not smiling for the camera, not pretending for anyone else—just you and me, laughing and smiling because we’re together. This is my favourite picture of us. Pure, real, silly, and completely in love."}
+ {type:'image',date:'THE BEGINNING',title:'The seat that changed everything',kicker:'CHAPTER 01 · BEFORE WE SPOKE',symbol:'✧',media:'photos/HowLoveLooksBesideyourdesk.jpg',song:{title:'Saibo',artist:'Shreya Ghoshal & Tochi Raina · Shor in the City',src:'audio/card01_saibo.mp3'},text:"My seating got changed to outside right beside you. Initially, I had planned not to talk to you at all—I saw you, thought of you as way too talkative, and to be honest, all I wanted was for you to be quiet so I could have some peace. I had no intention of talking to you. But I had no idea that one small change would bring someone into my life who I would never want to stop talking to."},
+ {type:'image',date:'13 OCTOBER',title:'The day things went up',kicker:'13 OCT · CHAPTER 02',symbol:'♡',media:'photos/HowLoveLooksBesideyourdeskCloser.jpg',song:{title:'Apna Bana Le',artist:'Arijit Singh · Bhediya',src:'audio/card02_apna_bana_le.mp3'},text:"On 13th October, we finally exchanged numbers, and from that day on, things just went up. The quiet stolen glances beside our desks turned into late-night texts, shared jokes, and conversations that stretched for hours. That was the day our little world truly began to take off."},
+ {type:'image',date:'27 OCTOBER',title:'Our first date — Barsana',kicker:'27 OCT · CHAPTER 03',symbol:'✦',media:'photos/HowIwantHertoLookFromBehind.jpg',gallery:[{src:'photos/HowIwantHertoLookFromBehind.jpg',label:'1 · Walking behind you'},{src:'photos/HowPrettySheIs.jpg',label:'2 · Pretty in Barsana'},{src:'photos/HowBeautifullshelooks.jpg',label:'3 · Pure beauty'}],song:{title:'Hawayein',artist:'Arijit Singh · Jab Harry Met Sejal',src:'audio/card03_hawayein.mp3'},text:"Barsana. 27th October, our first date. I didn't know that this day would become one of those memories I replay with the biggest smile. Whenever we walk together and I see you right in front of me, I catch myself just admiring you. The way you walk, the quiet grace you carry, and the pure comfort of your presence. No matter where life takes us, I promise I’ll always be right here, walking beside you and holding your hand."},
+ {type:'reason',date:'OUR SWEET RIDES',title:'On the Activa ride',kicker:'CHAPTER 04 · REASON TO LOVE ♡',symbol:'✨',quote:'"Your hand resting on my shoulder, wishing I could freeze time right there..."',song:{title:'Tum Se Hi',artist:'Mohit Chauhan · Jab We Met',src:'audio/card04_tum_se_hi.mp3'},text:"You sitting behind me on that Activa ride, with your hand resting gently on my shoulder and holding my hand. I remember feeling the cool breeze and wishing I could freeze time right then and there. It's one of those quiet, unspoken moments where everything in the universe felt completely right, peaceful, and safe."},
+ {type:'image',date:'MID OCTOBER',title:'Cute like a little kitten',kicker:'CHAPTER 05 · SWEET CANDIDS',symbol:'♡',media:'photos/HerSnapLikecat.jpg',song:{title:'Heeriye',artist:'Jasleen Royal & Arijit Singh',src:'audio/card06_heeriye.mp3'},text:"You sent me this and my heart completely melted into a puddle. You have this soft, effortless cat-like cuteness that nobody else could ever replicate. Whenever I’m having a rough or heavy day, looking at this instantly makes the world feel warm and gentle again."},
+ {type:'video',date:'EARLY NOVEMBER',title:'How I love teasing you',kicker:'CHAPTER 06 · OUR SILLY MOMENTS',symbol:'✧',media:'photos/HowILovetoTeaseHer.mp4',song:{title:'Matargashti',artist:'Mohit Chauhan · Tamasha',src:'audio/card07_matargashti.mp3'},text:"I know I tease you and get on your nerves constantly, but I only do it because your reactions are priceless. The cute pout, the fake anger, and the way you end up laughing at me anyway—there is genuinely nobody else in this universe I’d rather annoy for the rest of my life."},
+ {type:'image',date:'EVERY SINGLE DAY',title:'That little chuckle of yours',kicker:'CHAPTER 07 · MY FAVOURITE SOUND',symbol:'✦',media:'photos/HerChukle.jpg',song:{title:'Zehnaseeb',artist:'Chinmayi & Shekhar Ravjiani · Hasee Toh Phasee',src:'audio/card08_zehnaseeb.mp3'},text:"There’s this specific, shy little chuckle you let out whenever something catches you off guard or makes you genuinely laugh. You probably don’t even notice you do it, but every single time I hear it, my whole mood instantly lifts. If I could save one sound forever, it would be your laughter."},
+ {type:'reason',date:'HIGHWAY DATES',title:'Our clumsy almost-kisses',kicker:'CHAPTER 08 · REASON TO LOVE ♡',symbol:'♡',quote:'"The accidental one, the awkward almost-kiss... even our clumsy bits became my favourite memories."',song:{title:'Kaise Hua',artist:'Vishal Mishra · Kabir Singh',src:'audio/card05_kaise_hua.mp3'},text:"Then came our casual highway dates, the hugs that make everything feel okay, and those kisses. The accidental one, the awkward almost-kiss that made us embarrassed and blush for hours, and then the one that finally happened. Somehow, even the clumsy, shy bits became my absolute favourite memories of us."},
+ {type:'image',date:'OUR PLAYFUL SIDE',title:'Your mischievous devil look',kicker:'CHAPTER 09 · PURE MISCHIEF',symbol:'☾',media:'photos/HerDevilLook.jpg',song:{title:'Chor Bazari',artist:'Sunidhi Chauhan & Neeraj · Love Aaj Kal',src:'audio/card09_chor_bazari.mp3'},text:"That unmistakable sparkle in your eyes right when you’re planning drama, teasing me, or pretending to be upset. You try so hard to look dangerous and intimidating, but you just end up looking impossibly cute. I wouldn’t trade this silly, dramatic side of you for anything."},
+ {type:'image',date:'NOVEMBER · PRESENT',title:'How we smile together',kicker:'CHAPTER 10 · PURE, REAL US',symbol:'✧',media:'photos/HowWeSmilenotforphotostogather.jpg',song:{title:'Enna Sona',artist:'Arijit Singh · OK Jaanu',src:'audio/card10_enna_sona.mp3'},text:"Not smiling for the camera, not pretending for anyone else—just you and me, laughing and smiling because we’re together. This is my favourite picture of us. Pure, real, silly, and completely in love."},
+ {type:'reason',date:'11:11 · FOREVER',title:'You are my 11:11',kicker:'CHAPTER 11 · OUR 11:11 DESTINATION ✧',symbol:'★',quote:'"You are my 11:11 — the wish I didn\'t know my heart was making, and the best thing that ever came true."',song:{title:'Kasoor',artist:'Prateek Kuhad · Kasoor',src:'audio/letter_kasoor.mp3'},text:"They say 11:11 is when you're supposed to make a wish. Honestly, I never really believed in angel numbers, wishing on clocks, or waiting on falling stars. But looking at you... for you, I will believe in it. You are my 11:11 — the wish I didn't even know my heart was making, and somehow the best thing that ever came into my life. Happy Birthday, my favourite plot twist. ❤️"}
 ];
 const cardAudio=new Audio();cardAudio.preload='none';
 const letterAudio=new Audio();letterAudio.preload='none';
 function toggleCardAudio(e){if(e)e.stopPropagation();const pill=document.getElementById('cardAudioPill'),btn=document.getElementById('cardAudioBtn');if(cardAudio.paused){cardAudio.play().then(()=>{pill.classList.add('playing');btn.textContent='❚❚'}).catch(()=>{})}else{cardAudio.pause();pill.classList.remove('playing');btn.textContent='▶'}}
 function toggleLetterAudio(){const badge=document.getElementById('letterAudioBadge'),status=document.getElementById('letterAudioStatus');if(letterAudio.paused){letterAudio.play().catch(()=>{});if(status)status.textContent='Playing ♡';if(badge)badge.style.opacity='1'}else{letterAudio.pause();if(status)status.textContent='Paused';if(badge)badge.style.opacity='0.65'}}
 window.toggleCardAudio=toggleCardAudio;window.toggleLetterAudio=toggleLetterAudio;
-// Stagger image preloading gently during idle time so page loads and responds instantly
-const preloadImages=()=>{memories.forEach(m=>{if(m.type==='image'&&m.media){const img=new Image();img.src=m.media}})};
+const preloadImages=()=>{memories.forEach(m=>{if(m.type==='image'&&m.media){const img=new Image();img.src=m.media;if(m.gallery){m.gallery.forEach(g=>{const gi=new Image();gi.src=g.src})}}})};
 if('requestIdleCallback' in window){requestIdleCallback(preloadImages,{timeout:2000})}else{setTimeout(preloadImages,1000)}
-const positions=[[24,8],[64,17],[76,27],[48,37],[24,47],[44,57],[76,67],[52,77],[26,86],[58,94]];
-const labels=['01 · The seat that changed it','02 · 13 Oct · Exchanged numbers','03 · 27 Oct · Barsana date','04 · Pretty in Barsana','05 · Beautiful in Barsana','06 · Kitten snap','07 · Teasing you','08 · Her chuckle','09 · Devil look','10 · Our real smile ♡'];
+const positions=[[24,7],[66,15],[76,24],[46,32],[22,41],[52,50],[78,59],[34,68],[64,77],[28,86],[58,94]];
+const labels=[
+ '01 · The seat that changed it',
+ '02 · 13 Oct · Numbers exchanged',
+ '03 · 27 Oct · Barsana date',
+ '04 · ♡ Reason: On the Activa ride',
+ '05 · Kitten snap',
+ '06 · Teasing you 🎬',
+ '07 · Her chuckle',
+ '08 · ♡ Reason: Our almost-kisses',
+ '09 · Devil look',
+ '10 · Our real smile ♡',
+ '11 · ✧ Reason: My 11:11 Forever ♡'
+];
 const map=document.getElementById('galaxyMap'),modal=document.getElementById('memoryModal');let current=0;const found=new Set();
-memories.forEach((m,i)=>{const b=document.createElement('button');b.className='starpoint';b.style.left=positions[i][0]+'%';b.style.top=positions[i][1]+'%';b.setAttribute('aria-label','Open chapter: '+m.title);b.innerHTML='<span class="star-badge">'+String(i+1).padStart(2,'0')+'</span><span class="dot"></span><span class="tag">'+labels[i]+'</span>';b.addEventListener('click',()=>openMemory(i,b));map.appendChild(b)});
-function openMemory(i,button){current=i;found.add(i);if(button)button.classList.add('visited');else map.querySelectorAll('.starpoint')[i]?.classList.add('visited');const m=memories[i];document.getElementById('memoryTitle').textContent=m.title;document.getElementById('memoryKicker').textContent=m.kicker;document.getElementById('memorySymbol').textContent=m.symbol;document.getElementById('memoryText').textContent=m.text;document.getElementById('memoryCounter').textContent=(i+1)+' / '+memories.length;const dateBadge=document.getElementById('memoryDate');if(dateBadge)dateBadge.textContent=m.date||'SWEET MOMENT';const pill=document.getElementById('cardAudioPill'),audioBtn=document.getElementById('cardAudioBtn');if(m.song){document.getElementById('cardSongTitle').textContent=m.song.title;document.getElementById('cardSongArtist').textContent=m.song.artist;cardAudio.src=m.song.src;cardAudio.currentTime=0;cardAudio.volume=0.65;if(m.type==='video'){cardAudio.pause();pill.classList.remove('playing');audioBtn.textContent='▶'}else{cardAudio.play().then(()=>{pill.classList.add('playing');audioBtn.textContent='❚❚'}).catch(()=>{pill.classList.remove('playing');audioBtn.textContent='▶'})}}const img=document.getElementById('memoryImg'),vid=document.getElementById('memoryVideo'),loader=document.getElementById('mediaLoader');if(m.type==='video'){img.style.display='none';if(loader)loader.style.display='none';vid.style.display='block';vid.src=m.media;vid.currentTime=0;vid.play().catch(()=>{});vid.onplay=()=>{cardAudio.pause();pill.classList.remove('playing');audioBtn.textContent='▶'}}else{vid.pause();vid.style.display='none';img.style.display='none';img.style.opacity='0';if(loader)loader.style.display='flex';img.onload=()=>{if(loader)loader.style.display='none';img.style.display='block';requestAnimationFrame(()=>{img.style.opacity='1'})};img.onerror=()=>{const fallback='Her%20bad%20photos/'+m.media.replace('photos/','');if(img.src!==fallback&&!img.src.includes('Her%20bad%20photos')){img.src=fallback}else if(loader){loader.innerHTML='<span style=\"font-size:20px\">♡</span><small>Memory captured forever</small>'}};img.src=m.media;if(img.complete&&img.naturalWidth>0){if(loader)loader.style.display='none';img.style.display='block';img.style.opacity='1'}}modal.classList.add('open');document.body.style.overflow='hidden';updateProgress()}
+memories.forEach((m,i)=>{
+ const b=document.createElement('button');
+ b.className='starpoint'+(m.type==='reason'?' reason-star':'');
+ b.style.left=positions[i][0]+'%';
+ b.style.top=positions[i][1]+'%';
+ b.setAttribute('aria-label','Open chapter: '+m.title);
+ b.innerHTML='<span class="star-badge">'+String(i+1).padStart(2,'0')+'</span><span class="dot"></span><span class="tag">'+labels[i]+'</span>';
+ b.addEventListener('click',()=>openMemory(i,b));
+ map.appendChild(b);
+});
+function selectGalleryPhoto(e,idx){
+ if(e)e.stopPropagation();
+ const m=memories[current];
+ if(!m||!m.gallery)return;
+ const pills=document.querySelectorAll('.gal-pill');
+ pills.forEach((p,i)=>p.classList.toggle('active',i===idx));
+ const img=document.getElementById('memoryImg'),loader=document.getElementById('mediaLoader');
+ img.style.opacity='0';
+ if(loader)loader.style.display='flex';
+ img.onload=()=>{if(loader)loader.style.display='none';img.style.display='block';requestAnimationFrame(()=>{img.style.opacity='1'})};
+ img.src=m.gallery[idx].src;
+ if(img.complete&&img.naturalWidth>0){if(loader)loader.style.display='none';img.style.display='block';img.style.opacity='1'}
+}
+window.selectGalleryPhoto=selectGalleryPhoto;
+function openMemory(i,button){
+ current=i;found.add(i);
+ if(button)button.classList.add('visited');else map.querySelectorAll('.starpoint')[i]?.classList.add('visited');
+ const m=memories[i];
+ document.getElementById('memoryTitle').textContent=m.title;
+ document.getElementById('memoryKicker').textContent=m.kicker;
+ document.getElementById('memorySymbol').textContent=m.symbol;
+ document.getElementById('memoryText').textContent=m.text;
+ document.getElementById('memoryCounter').textContent=(i+1)+' / '+memories.length;
+ const dateBadge=document.getElementById('memoryDate');if(dateBadge)dateBadge.textContent=m.date||'SWEET MOMENT';
+ const pill=document.getElementById('cardAudioPill'),audioBtn=document.getElementById('cardAudioBtn');
+ if(m.song){
+  document.getElementById('cardSongTitle').textContent=m.song.title;
+  document.getElementById('cardSongArtist').textContent=m.song.artist;
+  cardAudio.src=m.song.src;cardAudio.currentTime=0;cardAudio.volume=0.65;
+  if(m.type==='video'){
+   cardAudio.pause();pill.classList.remove('playing');audioBtn.textContent='▶';
+  }else{
+   cardAudio.play().then(()=>{pill.classList.add('playing');audioBtn.textContent='❚❚'}).catch(()=>{pill.classList.remove('playing');audioBtn.textContent='▶'});
+  }
+ }
+ const img=document.getElementById('memoryImg'),vid=document.getElementById('memoryVideo'),loader=document.getElementById('mediaLoader');
+ const reasonShowcase=document.getElementById('reasonShowcase'),reasonQuote=document.getElementById('reasonQuote');
+ const galleryBar=document.getElementById('galleryBar'),tapPrompt=document.getElementById('tapPrompt');
+ if(m.type==='reason'){
+  vid.pause();vid.style.display='none';img.style.display='none';if(loader)loader.style.display='none';
+  if(galleryBar)galleryBar.style.display='none';
+  if(reasonShowcase){reasonShowcase.style.display='flex';if(reasonQuote)reasonQuote.textContent=m.quote||m.text;}
+  if(tapPrompt)tapPrompt.textContent='Tap card to send a little love ♡';
+ }else if(m.type==='video'){
+  if(reasonShowcase)reasonShowcase.style.display='none';if(galleryBar)galleryBar.style.display='none';
+  img.style.display='none';if(loader)loader.style.display='none';
+  vid.style.display='block';vid.src=m.media;vid.currentTime=0;vid.play().catch(()=>{});
+  vid.onplay=()=>{cardAudio.pause();pill.classList.remove('playing');audioBtn.textContent='▶'};
+  if(tapPrompt)tapPrompt.textContent='Tap to send a little love ♡';
+ }else{
+  if(reasonShowcase)reasonShowcase.style.display='none';vid.pause();vid.style.display='none';
+  img.style.display='none';img.style.opacity='0';if(loader)loader.style.display='flex';
+  if(tapPrompt)tapPrompt.textContent='Tap photo to send a little love ♡';
+  if(m.gallery&&galleryBar){
+   galleryBar.style.display='flex';
+   galleryBar.querySelectorAll('.gal-pill').forEach((p,idx)=>p.classList.toggle('active',idx===0));
+  }else if(galleryBar){galleryBar.style.display='none'}
+  img.onload=()=>{if(loader)loader.style.display='none';img.style.display='block';requestAnimationFrame(()=>{img.style.opacity='1'})};
+  img.onerror=()=>{const fallback='Her%20bad%20photos/'+m.media.replace('photos/','');if(img.src!==fallback&&!img.src.includes('Her%20bad%20photos')){img.src=fallback}else if(loader){loader.innerHTML='<span style="font-size:20px">♡</span><small>Memory captured forever</small>'}};
+  img.src=m.media;
+  if(img.complete&&img.naturalWidth>0){if(loader)loader.style.display='none';img.style.display='block';img.style.opacity='1'}
+ }
+ modal.classList.add('open');document.body.style.overflow='hidden';updateProgress();
+}
 function closeMemory(){modal.classList.remove('open');document.body.style.overflow='';const vid=document.getElementById('memoryVideo');if(vid)vid.pause();cardAudio.pause();const pill=document.getElementById('cardAudioPill');if(pill)pill.classList.remove('playing')}
 function nextMemory(){let n=(current+1)%memories.length;openMemory(n)}
 function prevMemory(){let p=(current-1+memories.length)%memories.length;openMemory(p)}
 modal.addEventListener('click',e=>{if(e.target===modal)closeMemory()});addEventListener('keydown',e=>{if(e.key==='Escape')closeMemory();if(modal.classList.contains('open')){if(e.key==='ArrowRight')nextMemory();if(e.key==='ArrowLeft')prevMemory()}});
-function updateProgress(){let n=found.size;document.getElementById('progressText').textContent=n+' OF 10 CHAPTERS FOUND';document.getElementById('progressFill').style.width=(n/10*100)+'%';const progressLine=document.getElementById('progressLine');if(progressLine){const fraction=n/10;progressLine.style.strokeDashoffset=String(2100*(1-fraction))}if(n===10){const heart=document.getElementById('heartPath');if(heart){heart.setAttribute('opacity','1');heart.setAttribute('fill','rgba(245, 189, 219, 0.28)');heart.style.animation='heartPulse 2s ease-in-out infinite'}document.getElementById('toast').textContent='You walked our whole story. You will always be my 11:11. ✧';showToast()}}
+function updateProgress(){
+ let n=found.size;
+ document.getElementById('progressText').textContent=n+' OF 11 CHAPTERS FOUND';
+ document.getElementById('progressFill').style.width=(n/11*100)+'%';
+ const progressLine=document.getElementById('progressLine');
+ if(progressLine){
+  const totalLen=progressLine.getTotalLength?progressLine.getTotalLength():3400;
+  progressLine.style.strokeDasharray=totalLen;
+  const fraction=n/11;
+  progressLine.style.strokeDashoffset=String(totalLen*(1-fraction));
+ }
+ if(n===11){
+  const heart=document.getElementById('heartPath');
+  if(heart){heart.setAttribute('opacity','1');heart.setAttribute('fill','rgba(245, 189, 219, 0.32)');heart.style.animation='heartPulse 2s ease-in-out infinite'}
+  document.getElementById('toast').textContent='You walked our whole 11:11 story. You will always be my sweetest wish. ✧';showToast();
+ }
+}
 function goTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}window.goTo=goTo;window.openMemory=openMemory;window.closeMemory=closeMemory;window.nextMemory=nextMemory;window.prevMemory=prevMemory;
 window.openLetter=()=>{document.getElementById('letterPaper').classList.add('open');document.getElementById('envelope').style.display='none';document.getElementById('letterPaper').scrollIntoView({behavior:'smooth',block:'center'});letterAudio.src='audio/letter_kasoor.mp3';letterAudio.volume=0.6;letterAudio.play().then(()=>{const status=document.getElementById('letterAudioStatus');if(status)status.textContent='Playing ♡'}).catch(()=>{})};
 const adjectives=['beautiful','charming','pretty','gorgeous','stunning','radiant','adorable','precious','breathtaking','magical','enchanting','irresistible'];
@@ -415,21 +508,6 @@ async function toggleMirror(){const photo=document.getElementById('herPhoto'),vi
 window.toggleMirror=toggleMirror;
 let candlesOut=0;window.blowCandle=el=>{if(el.classList.contains('out'))return;el.classList.add('out');candlesOut++;const wisp=document.createElement('span');wisp.className='smoke-wisp';wisp.textContent='💨';el.appendChild(wisp);setTimeout(()=>wisp.remove(),1400);document.getElementById('cakeHint').textContent=(3-candlesOut)+' CANDLE'+(3-candlesOut===1?'':'S')+' LEFT';if(candlesOut===3){document.getElementById('cakeHint').textContent='11:11 WISH MADE ✨';document.getElementById('cakeMessage').textContent='May every 11:11 wish you make come true. You will always be mine. ❤️';confetti(95)}};
 window.celebrate=()=>{confetti(75);document.getElementById('cakeMessage').textContent='If I could make an 11:11 wish, it would always be for a thousand more ordinary days with you. ❤️'};
-const elevenWishes=[
- {num:'01',title:'The Seat Beside You',prompt:'How one seat changed everything',text:'I had no intention of talking to you. But sitting outside next to you turned into the best thing that ever happened to me.'},
- {num:'02',title:'13th October',prompt:'The day things went up',text:'The night we swapped numbers. From that day on, our late-night conversations and laughs never stopped.'},
- {num:'03',title:'Walking Behind You',prompt:'Our first date in Barsana',text:'Catching myself just admiring the quiet grace in how you walk. I promise I’ll always walk beside you and hold your hand.'},
- {num:'04',title:'On The Activa',prompt:'Your hand on my shoulder',text:'You sitting behind me, holding my hand over my shoulder on that ride. I wish I could pause time in that moment.'},
- {num:'05',title:'Kitten Expressions',prompt:'Your soft, effortless cuteness',text:'When you send me silly candids and look like a sweet little cat. You make heavy days feel completely weightless.'},
- {num:'06',title:'Teasing You',prompt:'Your fake anger & pouts',text:'I only tease you because your cute reactions and giggles afterward are the sweetest thing in any universe.'},
- {num:'07',title:'That Little Chuckle',prompt:'My favourite sound in the world',text:'That shy, spontaneous little chuckle you let out when caught off guard. Hearing it instantly makes everything better.'},
- {num:'08',title:'Your Devil Look',prompt:'Trying to look dangerous',text:'When you narrow your eyes and pretend to be intimidating, but you just end up looking impossibly cute.'},
- {num:'09',title:'Our Clumsy Moments',prompt:'The accidental almost-kisses',text:'The clumsy, embarrassing almost-kisses that made us blush for hours. Even our awkward bits became my favourite memories.'},
- {num:'10',title:'How We Smile',prompt:'Real, silly, unposed laughter',text:'Not smiling for any camera or anyone else. Just laughing together because we are completely happy in each other.'},
- {num:'11',title:'My 11:11 Forever',prompt:'The wish that came true',text:'I never believed in making wishes on clocks. But looking at you, you are my 11:11 — the wish I didn’t know I made, and the best thing that ever came true.'}
-];
-const wishesGrid=document.getElementById('wishesGrid'),unlockedWishes=new Set();
-if(wishesGrid){elevenWishes.forEach((w,idx)=>{const card=document.createElement('div');card.className='wish-card';card.innerHTML='<div class="wish-header"><span class="wish-num">'+w.num+' ✧</span><span class="wish-star-icon">✦</span></div><div class="wish-prompt"><strong>'+w.title+'</strong> — '+w.prompt+'</div><div class="wish-secret">'+w.text+'</div>';card.addEventListener('click',()=>{card.classList.toggle('unlocked');if(card.classList.contains('unlocked')){unlockedWishes.add(idx);confetti(14)}else{unlockedWishes.delete(idx)}const count=unlockedWishes.size;const countEl=document.getElementById('wishesCountText'),fillEl=document.getElementById('wishesFill');if(countEl)countEl.textContent=count+' OF 11 CONFESSIONS UNLOCKED';if(fillEl)fillEl.style.width=(count/11*100)+'%';if(count===11){const cel=document.getElementById('allWishesCelebration');if(cel)cel.style.display='block';confetti(85)}});wishesGrid.appendChild(card)})}
 let audioCtx=null,isMusicPlaying=false,musicTimer=null;
 const melodyNotes=[261.63,329.63,392.00,493.88,523.25,493.88,392.00,329.63,349.23,440.00,523.25,659.25,523.25,440.00,349.23,329.63];
 let noteIdx=0;
